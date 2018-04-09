@@ -1,0 +1,976 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+<HTMLContent><![CDATA[
+<!-- YOUR HTML BEGINS -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<style>
+.hided{display: none;}
+.hidedd{display: none;}
+.hideddd{display: none;}
+.bye{display: none;}
+.showed{display: block;}
+.showedd{display: block;}
+.showeddd{display: block;}
+.hi{display: block;}
+</style>
+<script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(event) {
+var a = [["hippo", "flamingo", "Ibizan hound", "Indian elephant", "https://image.ibb.co/eHwwxx/flamingo.gif", "https://image.ibb.co/iAmqPc/flamingo_gcam_resnet152.gif", "flamingo", "0.99981659", "flamingo"],["bald eagle", "vulture", "hen", "kite", "https://image.ibb.co/fVfpHx/baldeagle.gif", "https://image.ibb.co/mt7mVH/kite_gcam_resnet152.png", "kite", "0.886453", "bald eagle"],["king penguin", "white stork", "jay", "pelican", "https://image.ibb.co/dxGJAH/pelican.gif", "https://image.ibb.co/dncQqH/white_stork_gcam_resnet152.gif", "white stork", "0.970537", "pelican"],["albatross","goose","great white heron","oystercatcher","https://image.ibb.co/frUfPc/albatross.jpg","https://image.ibb.co/gtpEjc/albatross_gcam_resnet152.png","albatross","0.998492102","albatross"],["partridge","chickadee","prairie chicken","cock","https://image.ibb.co/ijsBVH/prairiechicken.jpg","https://image.ibb.co/cgk9Hx/prairie_chicken_gcam_resnet152.png","prairie chicken","0.999949996","prairie chicken"],["indigo bird","sulphur-crested cockatoo","lorikeet","macaw","https://image.ibb.co/eR2H4c/macaw.jpg","https://image.ibb.co/dQPrVH/lorikeet_gcam_resnet152.png","lorikeet","0.660912","macaw"],["hornbill","black stork","crane","black grouse","https://image.ibb.co/cUvRxx/blackstork.jpg","https://image.ibb.co/hoVyAH/black_stork_gcam_resnet152.png","black stork","0.999908709","black stork"],["limpkin","peacock","African gray parrot","bittern","https://image.ibb.co/jXEVPc/limpkin.jpg","https://image.ibb.co/esGMVH/bittern_gcam_resnet152.png","bittern","0.515023","limpkin"],["water ouzel","oystercatcher","snowbird","water hen","https://image.ibb.co/dw7QPc/waterouzel.jpg","https://image.ibb.co/mmB8cx/water_ouzel_gcam_resnet152.png","water ouzel","1.000","water ouzel"],["ruffed grouse","coucal","bustard","brambling","https://image.ibb.co/caVvPc/coucal.jpg","https://image.ibb.co/dO45Pc/coucal_gcam_resnet152.png","ruffed grouse","0.701123","coucal"],["little blue heron","toucan","black swan","king penguin","https://image.ibb.co/g8PaqH/blackswan.jpg","https://image.ibb.co/njMzHx/toucan_gcam_resnet152.png","toucan","0.651235","black swan"],["great grey owl","ruffed grouse","ostrich","quail","https://image.ibb.co/cOn0Pc/greatgreyowl.jpg","https://image.ibb.co/ef2mVH/ruffed_grouse_gcam_resnet152.png","ruffed grouse","0.692117","great grey owl"],["coucal","jacamar","house finch","robin","https://image.ibb.co/im1VqH/robin.jpg","https://image.ibb.co/juAvPc/coucal_gcam_resnet152.png","coucal","0.97097","robin"],["African gray parrot","hummingbird","dragonfly","crane","https://image.ibb.co/gPwVqH/hummingbird.jpg","https://image.ibb.co/hqdAqH/hummingbird_gcam_resnet152.png","hummingbird","1.000","hummingbird"],["spoonbill","peacock","jay","house finch","https://image.ibb.co/hOkjHx/peacock.jpg","https://image.ibb.co/jkYocx/peacock_gcam_resnet152.png","peacock","0.999989999","peacock"],["drake","red-breasted merganser","ruddy turnstone","redshank","https://image.ibb.co/gjvejc/redbreastedmerganser.jpg","https://image.ibb.co/b5WwVH/drake_gcam_resnet152.png","drake","0.716489","red-breasted merganser"],["red-backed sandpiper","redshank","ptarmigan","dowitcher","https://image.ibb.co/huDh4c/dowitcher.jpg","https://image.ibb.co/hmth4c/dowitcher_gcam_resnet152.png","dowitcher","0.973961481","dowitcher"],["cock","partridge","drake","hen","https://image.ibb.co/cfotAH/hen.jpg","https://image.ibb.co/gecaPc/cock_gcam_resnet152.png","cock","0.56361","hen"]];
+
+var j, x, i;
+for (i = a.length - 1; i > 0; i--) {
+j = Math.floor(Math.random() * (i + 1));
+x = a[i];
+a[i] = a[j];
+a[j] = x;
+}
+
+for(k=0; k < (2*a.length); k++) {
+var x = 4*k+1;
+var y = Math.floor(k/2.0);
+
+poss = [0,1,2,3];
+var p, r, s;
+for (s = poss.length - 1; s > 0; s--) {
+p = Math.floor(Math.random() * (s + 1));
+r = poss[s];
+poss[s] = poss[p];
+poss[p] = r;
+}
+
+document.getElementById("op"+x.toString()).innerHTML = a[y][poss[0]];
+document.getElementById("in"+x.toString()).value = a[y][poss[0]];
+document.getElementById("op"+(x+1).toString()).innerHTML = a[y][poss[1]];
+document.getElementById("in"+(x+1).toString()).value = a[y][poss[0]];
+document.getElementById("op"+(x+2).toString()).innerHTML = a[y][poss[2]];
+document.getElementById("in"+(x+2).toString()).value = a[y][poss[2]];
+document.getElementById("op"+(x+3).toString()).innerHTML = a[y][poss[3]];
+document.getElementById("in"+(x+3).toString()).value = a[y][poss[3]];
+}
+for(m=0; m < a.length; m++) {
+document.getElementById("r"+(m+1).toString()).innerHTML = "AI's Decision: "+a[m][6]+"; Confidence: "+a[m][7]+". Please make a final decision.";
+if(m==a.length-1){
+document.getElementById("f"+(m+1).toString()).innerHTML = "The correct answer was "+a[m][8]+". Please submit the hit.";
+}
+else{
+document.getElementById("f"+(m+1).toString()).innerHTML = "The correct answer was "+a[m][8]+". Press 'Continue' to move on to the next question.";
+}
+document.getElementById("i"+(2*m+1).toString()).src = a[m][4];
+document.getElementById("i"+(2*m+2).toString()).src = a[m][5];
+
+var canvasDivs = document.getElementsByClassName('canvasDiv');
+var canvasDiv = canvasDivs[m];
+var canvas = document.createElement('CANVAS');
+canvas.setAttribute('width', 224);
+canvas.setAttribute('height', 224);
+canvasDiv.appendChild(canvas);
+if(typeof G_vmlCanvasManager != 'undefined') {
+	canvas = G_vmlCanvasManager.initElement(canvas);
+}
+var context = canvas.getContext("2d");
+var outlineImage = new Image();
+outlineImage.src = a[m][4];
+context.drawImage(outlineImage, 0, 0, context.canvas.width, context.canvas.height);
+
+var clickX = new Array();
+var clickY = new Array();
+var clickDrag = new Array();
+var paint;
+
+canvas.addEventListener("mousedown",function(e){
+  var mouseX = e.pageX - this.offsetLeft;
+  var mouseY = e.pageY - this.offsetTop;
+		
+  paint = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, clickX, clickY);
+  redraw(clickX, clickY);
+});
+
+canvas.addEventListener("mousemove",function(e){
+  if(paint){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, clickX, clickY);
+  redraw(clickX, clickY);
+  }
+});
+
+canvas.addEventListener("mouseup",function(e){
+paint = false;
+});
+
+canvas.addEventListener("mouseleave",function(e){
+  paint = false;
+  });
+}
+});
+
+function addClick(x, y, dragging, clickX, clickY) {
+  clickX.push(x);
+  clickY.push(y);
+  clickDrag.push(dragging);
+}
+
+function redraw(clickX, clickY) {
+  context.strokeStyle = "#df4b26";
+  context.lineJoin = "round";
+  context.lineWidth = 5;
+			
+  for(var i=0; i < clickX.length; i++) {		
+    context.beginPath();
+    if(clickDrag[i] && i){
+      context.moveTo(clickX[i-1], clickY[i-1]);
+     }else{
+       context.moveTo(clickX[i]-1, clickY[i]);
+     }
+     context.lineTo(clickX[i], clickY[i]);
+     context.closePath();
+     context.stroke();
+  }
+}
+
+function myFunction() {
+var elements = document.getElementsByClassName('hideddd');
+var requiredElement = elements[0];
+requiredElement.classList.remove("hideddd");
+requiredElement.classList.add("showeddd");
+}
+
+function myFunction2(i) {
+var elements = document.getElementsByClassName('hided');
+var requiredElement = elements[i];
+requiredElement.classList.remove("hided");
+requiredElement.classList.add("showed");
+
+var current = document.getElementsByClassName('showed');
+var requiredCurrent = current[0];
+requiredCurrent.classList.remove("showed");
+requiredCurrent.classList.add("hided");
+}
+
+function myFunction3() {
+var element = document.getElementsByClassName('bye');
+var requiredElement = element[0];
+requiredElement.classList.remove("bye");
+requiredElement.classList.add("showed");
+
+var current = document.getElementsByClassName('hi');
+var requiredCurrent = current[0];
+requiredCurrent.classList.remove("hi");
+requiredCurrent.classList.add("bye");
+}
+
+function updateTextInput(val,n) {
+document.getElementById('textInput'+ n.toString()).value=val;
+
+var elements = document.getElementsByClassName('hidedd');
+var requiredElement = elements[0];
+requiredElement.classList.remove("hidedd");
+requiredElement.classList.add("showedd");
+}
+</script>
+</head>
+<body>
+<form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'><input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+
+<fieldset class="hi">
+<div><strong>Instructions</strong></div>
+<div>
+<ul>
+<li>You will be working with an AI bot, as a team, to classify images.</li>
+<li>You will be asked to answer multiple-choice questions to classify 18 images.</li>
+<li>You will be asked to classify each image twice. First, you will classify a given image without any additional information. Afterward, you will be given the AI bot's answer, its confidence in its answer, and a visual explanation of its answer. With this new information, you will be asked to make a final classification of the image.</li>
+<li>The team's final answer will be determined based on an equal weighting of your final answer and the AI bot's final answer.</li>
+<li>You may not return to any question, so please choose your answers carefully.</li>
+</ul>
+</div>
+<button type="button" onclick="myFunction3()">Continue</button>
+</fieldset>
+
+<fieldset class="bye">
+<p>Please categorize the image below.</p>
+<div class="canvasDiv"></div>
+<img id="i1" src="">
+<div class="radio"><input name="Q1Answer" type="radio" value="wait1" id="in1" onclick="myFunction()"/><label for="in1" id="op1">wait1</label></div>
+
+<div class="radio"><input name="Q1Answer" type="radio" value="wait2" id="in2" onclick="myFunction()"/><label for="in2" id="op2">wait2</label></div>
+
+<div class="radio"><input name="Q1Answer" type="radio" value="wait3" id="in3" onclick="myFunction()"/><label for="in3" id="op3">wait3</label></div>
+
+<div class="radio"><input name="Q1Answer" type="radio" value="wait4" id="in4" onclick="myFunction()"/><label for="in4" id="op4">wait4</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,0);">
+<input type="text" style="width: 18px" id="textInput0" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(0)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r1"></p>
+<img id="i2" src="">
+<div class="radio"><input name="Q2Answer" type="radio" value="wait5" id="in5" onclick="myFunction()"/><label for="in5" id="op5">wait5</label></div>
+
+<div class="radio"><input name="Q2Answer" type="radio" value="wait6" id="in6" onclick="myFunction()"/><label for="in6" id="op6">wait6</label></div>
+
+<div class="radio"><input name="Q2Answer" type="radio" value="wait7" id="in7" onclick="myFunction()"/><label for="in7" id="op7">wait7</label></div>
+
+<div class="radio"><input name="Q2Answer" type="radio" value="wait8" id="in8" onclick="myFunction()"/><label for="in8" id="op8">wait8</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,1);">
+<input type="text" style="width: 18px" id="textInput1" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(1)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f1"></p>
+<button type="button" onclick="myFunction2(2)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<div class="canvasDiv"></div>
+<img id="i3" src="">
+<div class="radio"><input name="Q3Answer" type="radio" value="wait9" id="in9" onclick="myFunction()"/><label for="in9" id="op9">wait9</label></div>
+
+<div class="radio"><input name="Q3Answer" type="radio" value="wait10" id="in10" onclick="myFunction()"/><label for="in10" id="op10">wait10</label></div>
+
+<div class="radio"><input name="Q3Answer" type="radio" value="wait11" id="in11" onclick="myFunction()"/><label for="in11" id="op11">wait11</label></div>
+
+<div class="radio"><input name="Q3Answer" type="radio" value="wait12" id="in12" onclick="myFunction()"/><label for="in12" id="op12">wait12</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,2);">
+<input type="text" style="width: 18px" id="textInput2" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(3)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r2"></p>
+<img id="i4" src="">
+<div class="radio"><input name="Q4Answer" type="radio" value="wait13" id="in13" onclick="myFunction()"/><label for="in13" id="op13">wait13</label></div>
+
+<div class="radio"><input name="Q4Answer" type="radio" value="wait14" id="in14" onclick="myFunction()"/><label for="in14" id="op14">wait14</label></div>
+
+<div class="radio"><input name="Q4Answer" type="radio" value="wait15" id="in15" onclick="myFunction()"/><label for="in15" id="op15">wait15</label></div>
+
+<div class="radio"><input name="Q4Answer" type="radio" value="wait16" id="in16" onclick="myFunction()"/><label for="in16" id="op16">wait16</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,3);">
+<input type="text" style="width: 18px" id="textInput3" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(4)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f2"></p>
+<button type="button" onclick="myFunction2(5)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<div class="canvasDiv"></div>
+<img id="i5" src="">
+<div class="radio"><input name="Q5Answer" type="radio" value="wait17" id="in17" onclick="myFunction()"/><label for="in17" id="op17">wait17</label></div>
+
+<div class="radio"><input name="Q5Answer" type="radio" value="wait18" id="in18" onclick="myFunction()"/><label for="in18" id="op18">wait18</label></div>
+
+<div class="radio"><input name="Q5Answer" type="radio" value="wait19" id="in19" onclick="myFunction()"/><label for="in19" id="op19">wait19</label></div>
+
+<div class="radio"><input name="Q5Answer" type="radio" value="wait20" id="in20" onclick="myFunction()"/><label for="in20" id="op20">wait20</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,4);">
+<input type="text" style="width: 18px" id="textInput4" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(6)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r3"></p>
+<img id="i6" src="">
+<div class="radio"><input name="Q6Answer" type="radio" value="wait21" id="in21" onclick="myFunction()"/><label for="in21" id="op21">wait21</label></div>
+
+<div class="radio"><input name="Q6Answer" type="radio" value="wait22" id="in22" onclick="myFunction()"/><label for="in22" id="op22">wait22</label></div>
+
+<div class="radio"><input name="Q6Answer" type="radio" value="wait23" id="in23" onclick="myFunction()"/><label for="in23" id="op23">wait23</label></div>
+
+<div class="radio"><input name="Q6Answer" type="radio" value="wait24" id="in24" onclick="myFunction()"/><label for="in24" id="op24">wait24</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,5);">
+<input type="text" style="width: 18px" id="textInput5" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(7)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f3"></p>
+<button type="button" onclick="myFunction2(8)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i7" src="">
+<div class="radio"><input name="Q7Answer" type="radio" value="wait25" id="in25" onclick="myFunction()"/><label for="in25" id="op25">wait25</label></div>
+
+<div class="radio"><input name="Q7Answer" type="radio" value="wait26" id="in26" onclick="myFunction()"/><label for="in26" id="op26">wait26</label></div>
+
+<div class="radio"><input name="Q7Answer" type="radio" value="wait27" id="in27" onclick="myFunction()"/><label for="in27" id="op27">wait27</label></div>
+
+<div class="radio"><input name="Q7Answer" type="radio" value="wait28" id="in28" onclick="myFunction()"/><label for="in28" id="op28">wait28</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,6);">
+<input type="text" style="width: 18px" id="textInput6" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(9)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r4"></p>
+<img id="i8" src="">
+<div class="radio"><input name="Q8Answer" type="radio" value="wait29" id="in29" onclick="myFunction()"/><label for="in29" id="op29">wait29</label></div>
+
+<div class="radio"><input name="Q8Answer" type="radio" value="wait30" id="in30" onclick="myFunction()"/><label for="in30" id="op30">wait30</label></div>
+
+<div class="radio"><input name="Q8Answer" type="radio" value="wait31" id="in31" onclick="myFunction()"/><label for="in31" id="op31">wait31</label></div>
+
+<div class="radio"><input name="Q8Answer" type="radio" value="wait32" id="in32" onclick="myFunction()"/><label for="in32" id="op32">wait32</label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,7);">
+<input type="text" style="width: 18px" id="textInput7" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(10)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f4"></p>
+<button type="button" onclick="myFunction2(11)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i9" src="">
+<div class="radio"><input name="Q9Answer" type="radio" value="" id="in33" onclick="myFunction()"/><label for="in33" id="op33"></label></div>
+
+<div class="radio"><input name="Q9Answer" type="radio" value="" id="in34" onclick="myFunction()"/><label for="in34" id="op34"></label></div>
+
+<div class="radio"><input name="Q9Answer" type="radio" value="" id="in35" onclick="myFunction()"/><label for="in35" id="op35"></label></div>
+
+<div class="radio"><input name="Q9Answer" type="radio" value="" id="in36" onclick="myFunction()"/><label for="in36" id="op36"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,8);">
+<input type="text" style="width: 18px" id="textInput8" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(12)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r5"></p>
+<img id="i10" src="">
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in37" onclick="myFunction()"/><label for="in37" id="op37"></label></div>
+
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in38" onclick="myFunction()"/><label for="in38" id="op38"></label></div>
+
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in39" onclick="myFunction()"/><label for="in39" id="op39"></label></div>
+
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in40" onclick="myFunction()"/><label for="in40" id="op40"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,9);">
+<input type="text" style="width: 18px" id="textInput9" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(13)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f5"></p>
+<button type="button" onclick="myFunction2(14)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i11" src="">
+<div class="radio"><input name="Q11Answer" type="radio" value="" id="in41" onclick="myFunction()"/><label for="in41" id="op41"></label></div>
+
+<div class="radio"><input name="Q11Answer" type="radio" value="" id="in42" onclick="myFunction()"/><label for="in42" id="op42"></label></div>
+
+<div class="radio"><input name="Q11Answer" type="radio" value="" id="in43" onclick="myFunction()"/><label for="in43" id="op43"></label></div>
+
+<div class="radio"><input name="Q11Answer" type="radio" value="" id="in44" onclick="myFunction()"/><label for="in44" id="op44"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,10);">
+<input type="text" style="width: 18px" id="textInput10" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(15)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r6"></p>
+<img id="i12" src="">
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in45" onclick="myFunction()"/><label for="in45" id="op45"></label></div>
+
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in46" onclick="myFunction()"/><label for="in46" id="op46"></label></div>
+
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in47" onclick="myFunction()"/><label for="in47" id="op47"></label></div>
+
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in48" onclick="myFunction()"/><label for="in48" id="op48"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,11);">
+<input type="text" style="width: 18px" id="textInput11" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(16)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f6"></p>
+<button type="button" onclick="myFunction2(17)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i13" src="">
+<div class="radio"><input name="Q13Answer" type="radio" value="" id="in49" onclick="myFunction()"/><label for="in49" id="op49"></label></div>
+
+<div class="radio"><input name="Q13Answer" type="radio" value="" id="in50" onclick="myFunction()"/><label for="in50" id="op50"></label></div>
+
+<div class="radio"><input name="Q13Answer" type="radio" value="" id="in51" onclick="myFunction()"/><label for="in51" id="op51"></label></div>
+
+<div class="radio"><input name="Q13Answer" type="radio" value="" id="in52" onclick="myFunction()"/><label for="in52" id="op52"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,12);">
+<input type="text" style="width: 18px" id="textInput12" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(18)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r7"></p>
+<img id="i14" src="">
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in53" onclick="myFunction()"/><label for="in53" id="op53"></label></div>
+
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in54" onclick="myFunction()"/><label for="in54" id="op54"></label></div>
+
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in55" onclick="myFunction()"/><label for="in55" id="op55"></label></div>
+
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in56" onclick="myFunction()"/><label for="in56" id="op56"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,13);">
+<input type="text" style="width: 18px" id="textInput13" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(19)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f7"></p>
+<button type="button" onclick="myFunction2(20)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i15" src="">
+<div class="radio"><input name="Q15Answer" type="radio" value="" id="in57" onclick="myFunction()"/><label for="in57" id="op57"></label></div>
+
+<div class="radio"><input name="Q15Answer" type="radio" value="" id="in58" onclick="myFunction()"/><label for="in58" id="op58"></label></div>
+
+<div class="radio"><input name="Q15Answer" type="radio" value="" id="in59" onclick="myFunction()"/><label for="in59" id="op59"></label></div>
+
+<div class="radio"><input name="Q15Answer" type="radio" value="" id="in60" onclick="myFunction()"/><label for="in60" id="op60"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,14);">
+<input type="text" style="width: 18px" id="textInput14" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(21)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r8"></p>
+<img id="i16" src="">
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in61" onclick="myFunction()"/><label for="in61" id="op61"></label></div>
+
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in62" onclick="myFunction()"/><label for="in62" id="op62"></label></div>
+
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in63" onclick="myFunction()"/><label for="in63" id="op63"></label></div>
+
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in64" onclick="myFunction()"/><label for="in64" id="op64"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,15);">
+<input type="text" style="width: 18px" id="textInput15" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(22)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f8"></p>
+<button type="button" onclick="myFunction2(23)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i17" src="">
+<div class="radio"><input name="Q17Answer" type="radio" value="" id="in65" onclick="myFunction()"/><label for="in65" id="op65"></label></div>
+
+<div class="radio"><input name="Q17Answer" type="radio" value="" id="in66" onclick="myFunction()"/><label for="in66" id="op66"></label></div>
+
+<div class="radio"><input name="Q17Answer" type="radio" value="" id="in67" onclick="myFunction()"/><label for="in67" id="op67"></label></div>
+
+<div class="radio"><input name="Q17Answer" type="radio" value="" id="in68" onclick="myFunction()"/><label for="in68" id="op68"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,16);">
+<input type="text" style="width: 18px" id="textInput16" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(24)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r9"></p>
+<img id="i18" src="">
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in69" onclick="myFunction()"/><label for="in69" id="op69"></label></div>
+
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in70" onclick="myFunction()"/><label for="in70" id="op70"></label></div>
+
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in71" onclick="myFunction()"/><label for="in70" id="op71"></label></div>
+
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in72" onclick="myFunction()"/><label for="in70" id="op72"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,17);">
+<input type="text" style="width: 18px" id="textInput17" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(25)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f9"></p>
+<button type="button" onclick="myFunction2(26)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i19" src="">
+<div class="radio"><input name="Q19Answer" type="radio" value="" id="in73" onclick="myFunction()"/><label for="in65" id="op73"></label></div>
+
+<div class="radio"><input name="Q19Answer" type="radio" value="" id="in74" onclick="myFunction()"/><label for="in66" id="op74"></label></div>
+
+<div class="radio"><input name="Q19Answer" type="radio" value="" id="in75" onclick="myFunction()"/><label for="in67" id="op75"></label></div>
+
+<div class="radio"><input name="Q19Answer" type="radio" value="" id="in76" onclick="myFunction()"/><label for="in68" id="op76"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,18);">
+<input type="text" style="width: 18px" id="textInput18" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(27)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r10"></p>
+<img id="i20" src="">
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in77" onclick="myFunction()"/><label for="in77" id="op77"></label></div>
+
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in78" onclick="myFunction()"/><label for="in78" id="op78"></label></div>
+
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in79" onclick="myFunction()"/><label for="in79" id="op79"></label></div>
+
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in80" onclick="myFunction()"/><label for="in80" id="op80"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,19);">
+<input type="text" style="width: 18px" id="textInput19" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(28)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f10"></p>
+<button type="button" onclick="myFunction2(29)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i21" src="">
+<div class="radio"><input name="Q21Answer" type="radio" value="" id="in81" onclick="myFunction()"/><label for="in81" id="op81"></label></div>
+
+<div class="radio"><input name="Q21Answer" type="radio" value="" id="in82" onclick="myFunction()"/><label for="in82" id="op82"></label></div>
+
+<div class="radio"><input name="Q21Answer" type="radio" value="" id="in83" onclick="myFunction()"/><label for="in83" id="op83"></label></div>
+
+<div class="radio"><input name="Q21Answer" type="radio" value="" id="in84" onclick="myFunction()"/><label for="in84" id="op84"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,20);">
+<input type="text" style="width: 18px" id="textInput20" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(30)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r11"></p>
+<img id="i22" src="">
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in85" onclick="myFunction()"/><label for="in85" id="op85"></label></div>
+
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in86" onclick="myFunction()"/><label for="in86" id="op86"></label></div>
+
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in87" onclick="myFunction()"/><label for="in87" id="op87"></label></div>
+
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in88" onclick="myFunction()"/><label for="in88" id="op88"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,21);">
+<input type="text" style="width: 18px" id="textInput21" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(31)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f11"></p>
+<button type="button" onclick="myFunction2(32)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i23" src="">
+<div class="radio"><input name="Q23Answer" type="radio" value="" id="in89" onclick="myFunction()"/><label for="in89" id="op89"></label></div>
+
+<div class="radio"><input name="Q23Answer" type="radio" value="" id="in90" onclick="myFunction()"/><label for="in90" id="op90"></label></div>
+
+<div class="radio"><input name="Q23Answer" type="radio" value="" id="in91" onclick="myFunction()"/><label for="in91" id="op91"></label></div>
+
+<div class="radio"><input name="Q23Answer" type="radio" value="" id="in92" onclick="myFunction()"/><label for="in92" id="op92"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,22);">
+<input type="text" style="width: 18px" id="textInput22" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(33)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r12"></p>
+<img id="i24" src="">
+<div class="radio"><input name="Q24Answer" type="radio" value="" id="in93" onclick="myFunction()"/><label for="in93" id="op93"></label></div>
+
+<div class="radio"><input name="Q24Answer" type="radio" value="" id="in94" onclick="myFunction()"/><label for="in94" id="op94"></label></div>
+
+<div class="radio"><input name="Q24Answer" type="radio" value="" id="in95" onclick="myFunction()"/><label for="in95" id="op95"></label></div>
+
+<div class="radio"><input name="Q24Answer" type="radio" value="" id="in96" onclick="myFunction()"/><label for="in96" id="op96"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,23);">
+<input type="text" style="width: 18px" id="textInput23" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(34)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f12"></p>
+<button type="button" onclick="myFunction2(35)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i25" src="">
+<div class="radio"><input name="Q25Answer" type="radio" value="" id="in97" onclick="myFunction()"/><label for="in97" id="op97"></label></div>
+
+<div class="radio"><input name="Q25Answer" type="radio" value="" id="in98" onclick="myFunction()"/><label for="in98" id="op98"></label></div>
+
+<div class="radio"><input name="Q25Answer" type="radio" value="" id="in99" onclick="myFunction()"/><label for="in99" id="op99"></label></div>
+
+<div class="radio"><input name="Q25Answer" type="radio" value="" id="in100" onclick="myFunction()"/><label for="in100" id="op100"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,24);">
+<input type="text" style="width: 18px" id="textInput24" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(36)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r13"></p>
+<img id="i26" src="">
+<div class="radio"><input name="Q26Answer" type="radio" value="" id="in101" onclick="myFunction()"/><label for="in101" id="op101"></label></div>
+
+<div class="radio"><input name="Q26Answer" type="radio" value="" id="in102" onclick="myFunction()"/><label for="in102" id="op102"></label></div>
+
+<div class="radio"><input name="Q26Answer" type="radio" value="" id="in103" onclick="myFunction()"/><label for="in103" id="op103"></label></div>
+
+<div class="radio"><input name="Q26Answer" type="radio" value="" id="in104" onclick="myFunction()"/><label for="in104" id="op104"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,25);">
+<input type="text" style="width: 18px" id="textInput25" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(37)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f13"></p>
+<button type="button" onclick="myFunction2(38)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i27" src="">
+<div class="radio"><input name="Q27Answer" type="radio" value="" id="in105" onclick="myFunction()"/><label for="in105" id="op105"></label></div>
+
+<div class="radio"><input name="Q27Answer" type="radio" value="" id="in106" onclick="myFunction()"/><label for="in106" id="op106"></label></div>
+
+<div class="radio"><input name="Q27Answer" type="radio" value="" id="in107" onclick="myFunction()"/><label for="in107" id="op107"></label></div>
+
+<div class="radio"><input name="Q27Answer" type="radio" value="" id="in108" onclick="myFunction()"/><label for="in108" id="op108"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,26);">
+<input type="text" style="width: 18px" id="textInput26" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(39)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r14"></p>
+<img id="i28" src="">
+<div class="radio"><input name="Q28Answer" type="radio" value="" id="in109" onclick="myFunction()"/><label for="in109" id="op109"></label></div>
+
+<div class="radio"><input name="Q28Answer" type="radio" value="" id="in110" onclick="myFunction()"/><label for="in110" id="op110"></label></div>
+
+<div class="radio"><input name="Q28Answer" type="radio" value="" id="in111" onclick="myFunction()"/><label for="in111" id="op111"></label></div>
+
+<div class="radio"><input name="Q28Answer" type="radio" value="" id="in112" onclick="myFunction()"/><label for="in112" id="op112"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,27);">
+<input type="text" style="width: 18px" id="textInput27" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(40)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f14"></p>
+<button type="button" onclick="myFunction2(41)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i29" src="">
+<div class="radio"><input name="Q29Answer" type="radio" value="" id="in113" onclick="myFunction()"/><label for="in113" id="op113"></label></div>
+
+<div class="radio"><input name="Q29Answer" type="radio" value="" id="in114" onclick="myFunction()"/><label for="in114" id="op114"></label></div>
+
+<div class="radio"><input name="Q29Answer" type="radio" value="" id="in115" onclick="myFunction()"/><label for="in115" id="op115"></label></div>
+
+<div class="radio"><input name="Q29Answer" type="radio" value="" id="in116" onclick="myFunction()"/><label for="in116" id="op116"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,28);">
+<input type="text" style="width: 18px" id="textInput28" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(42)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r15"></p>
+<img id="i30" src="">
+<div class="radio"><input name="Q30Answer" type="radio" value="" id="in117" onclick="myFunction()"/><label for="in117" id="op117"></label></div>
+
+<div class="radio"><input name="Q30Answer" type="radio" value="" id="in118" onclick="myFunction()"/><label for="in118" id="op118"></label></div>
+
+<div class="radio"><input name="Q30Answer" type="radio" value="" id="in119" onclick="myFunction()"/><label for="in119" id="op119"></label></div>
+
+<div class="radio"><input name="Q30Answer" type="radio" value="" id="in120" onclick="myFunction()"/><label for="in120" id="op120"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,29);">
+<input type="text" style="width: 18px" id="textInput29" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(43)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f15"></p>
+<button type="button" onclick="myFunction2(44)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i31" src="">
+<div class="radio"><input name="Q31Answer" type="radio" value="" id="in121" onclick="myFunction()"/><label for="in121" id="op121"></label></div>
+
+<div class="radio"><input name="Q31Answer" type="radio" value="" id="in122" onclick="myFunction()"/><label for="in122" id="op122"></label></div>
+
+<div class="radio"><input name="Q31Answer" type="radio" value="" id="in123" onclick="myFunction()"/><label for="in123" id="op123"></label></div>
+
+<div class="radio"><input name="Q31Answer" type="radio" value="" id="in124" onclick="myFunction()"/><label for="in124" id="op124"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,30);">
+<input type="text" style="width: 18px" id="textInput30" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(45)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r16"></p>
+<img id="i32" src="">
+<div class="radio"><input name="Q32Answer" type="radio" value="" id="in125" onclick="myFunction()"/><label for="in125" id="op125"></label></div>
+
+<div class="radio"><input name="Q32Answer" type="radio" value="" id="in126" onclick="myFunction()"/><label for="in126" id="op126"></label></div>
+
+<div class="radio"><input name="Q32Answer" type="radio" value="" id="in127" onclick="myFunction()"/><label for="in127" id="op127"></label></div>
+
+<div class="radio"><input name="Q32Answer" type="radio" value="" id="in128" onclick="myFunction()"/><label for="in128" id="op128"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,31);">
+<input type="text" style="width: 18px" id="textInput31" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(46)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f16"></p>
+<button type="button" onclick="myFunction2(47)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i33" src="">
+<div class="radio"><input name="Q33Answer" type="radio" value="" id="in129" onclick="myFunction()"/><label for="in129" id="op129"></label></div>
+
+<div class="radio"><input name="Q33Answer" type="radio" value="" id="in130" onclick="myFunction()"/><label for="in130" id="op130"></label></div>
+
+<div class="radio"><input name="Q33Answer" type="radio" value="" id="in131" onclick="myFunction()"/><label for="in131" id="op131"></label></div>
+
+<div class="radio"><input name="Q33Answer" type="radio" value="" id="in132" onclick="myFunction()"/><label for="in132" id="op132"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,32);">
+<input type="text" style="width: 18px" id="textInput32" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(48)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r17"></p>
+<img id="i34" src="">
+<div class="radio"><input name="Q34Answer" type="radio" value="" id="in133" onclick="myFunction()"/><label for="in133" id="op133"></label></div>
+
+<div class="radio"><input name="Q34Answer" type="radio" value="" id="in134" onclick="myFunction()"/><label for="in134" id="op134"></label></div>
+
+<div class="radio"><input name="Q34Answer" type="radio" value="" id="in135" onclick="myFunction()"/><label for="in135" id="op135"></label></div>
+
+<div class="radio"><input name="Q34Answer" type="radio" value="" id="in136" onclick="myFunction()"/><label for="in136" id="op136"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,33);">
+<input type="text" style="width: 18px" id="textInput33" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(49)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="f17"></p>
+<button type="button" onclick="myFunction2(50)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<img id="i35" src="">
+<div class="radio"><input name="Q35Answer" type="radio" value="" id="in137" onclick="myFunction()"/><label for="in137" id="op137"></label></div>
+
+<div class="radio"><input name="Q35Answer" type="radio" value="" id="in138" onclick="myFunction()"/><label for="in138" id="op138"></label></div>
+
+<div class="radio"><input name="Q35Answer" type="radio" value="" id="in139" onclick="myFunction()"/><label for="in139" id="op139"></label></div>
+
+<div class="radio"><input name="Q35Answer" type="radio" value="" id="in140" onclick="myFunction()"/><label for="in140" id="op140"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,34);">
+<input type="text" style="width: 18px" id="textInput34" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(51)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r18"></p>
+<img id="i36" src="">
+<div class="radio"><input name="Q36Answer" type="radio" value="" id="in141" onclick="myFunction()"/><label for="in141" id="op141"></label></div>
+
+<div class="radio"><input name="Q36Answer" type="radio" value="" id="in142" onclick="myFunction()"/><label for="in142" id="op142"></label></div>
+
+<div class="radio"><input name="Q36Answer" type="radio" value="" id="in143" onclick="myFunction()"/><label for="in143" id="op143"></label></div>
+
+<div class="radio"><input name="Q36Answer" type="radio" value="" id="in144" onclick="myFunction()"/><label for="in144" id="op144"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,35);">
+<input type="text" style="width: 18px" id="textInput35" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(52)">Continue</button>
+</fieldset>
+
+
+<fieldset class="hided">
+<p id="f18"></p>
+</fieldset>
+
+<p><input type='submit' id='submitButton' value='Submit' /></p></form>
+<script language='Javascript'>turkSetAssignmentID();</script>
+</body></html>
+<!-- YOUR HTML ENDS -->
+]]>
+</HTMLContent>
+<FrameHeight>600</FrameHeight>
+</HTMLQuestion>
