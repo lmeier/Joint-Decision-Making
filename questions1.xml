@@ -6,20 +6,22 @@
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 <style>
+.canvasDiv{display: none;}
+.hideddd{display: none;}
 .hided{display: none;}
 .hidedd{display: none;}
-.hideddd{display: none;}
 .bye{display: none;}
 .showed{display: block;}
 .showedd{display: block;}
 .showeddd{display: block;}
 .hi{display: block;}
+.showd{display: block;}
 </style>
 <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
 <script>
-
+var a = [];
 document.addEventListener("DOMContentLoaded", function(event) {
-var a = [["hippo", "flamingo", "Ibizan hound", "Indian elephant", "https://image.ibb.co/eHwwxx/flamingo.gif", "https://image.ibb.co/iAmqPc/flamingo_gcam_resnet152.gif", "flamingo", "0.99981659", "flamingo"],["bald eagle", "vulture", "hen", "kite", "https://image.ibb.co/fVfpHx/baldeagle.gif", "https://image.ibb.co/mt7mVH/kite_gcam_resnet152.png", "kite", "0.886453", "bald eagle"],["king penguin", "white stork", "jay", "pelican", "https://image.ibb.co/dxGJAH/pelican.gif", "https://image.ibb.co/dncQqH/white_stork_gcam_resnet152.gif", "white stork", "0.970537", "pelican"],["albatross","goose","great white heron","oystercatcher","https://image.ibb.co/frUfPc/albatross.jpg","https://image.ibb.co/gtpEjc/albatross_gcam_resnet152.png","albatross","0.998492102","albatross"],["partridge","chickadee","prairie chicken","cock","https://image.ibb.co/ijsBVH/prairiechicken.jpg","https://image.ibb.co/cgk9Hx/prairie_chicken_gcam_resnet152.png","prairie chicken","0.999949996","prairie chicken"],["indigo bird","sulphur-crested cockatoo","lorikeet","macaw","https://image.ibb.co/eR2H4c/macaw.jpg","https://image.ibb.co/dQPrVH/lorikeet_gcam_resnet152.png","lorikeet","0.660912","macaw"],["hornbill","black stork","crane","black grouse","https://image.ibb.co/cUvRxx/blackstork.jpg","https://image.ibb.co/hoVyAH/black_stork_gcam_resnet152.png","black stork","0.999908709","black stork"],["limpkin","peacock","African gray parrot","bittern","https://image.ibb.co/jXEVPc/limpkin.jpg","https://image.ibb.co/esGMVH/bittern_gcam_resnet152.png","bittern","0.515023","limpkin"],["water ouzel","oystercatcher","snowbird","water hen","https://image.ibb.co/dw7QPc/waterouzel.jpg","https://image.ibb.co/mmB8cx/water_ouzel_gcam_resnet152.png","water ouzel","1.000","water ouzel"],["ruffed grouse","coucal","bustard","brambling","https://image.ibb.co/caVvPc/coucal.jpg","https://image.ibb.co/dO45Pc/coucal_gcam_resnet152.png","ruffed grouse","0.701123","coucal"],["little blue heron","toucan","black swan","king penguin","https://image.ibb.co/g8PaqH/blackswan.jpg","https://image.ibb.co/njMzHx/toucan_gcam_resnet152.png","toucan","0.651235","black swan"],["great grey owl","ruffed grouse","ostrich","quail","https://image.ibb.co/cOn0Pc/greatgreyowl.jpg","https://image.ibb.co/ef2mVH/ruffed_grouse_gcam_resnet152.png","ruffed grouse","0.692117","great grey owl"],["coucal","jacamar","house finch","robin","https://image.ibb.co/im1VqH/robin.jpg","https://image.ibb.co/juAvPc/coucal_gcam_resnet152.png","coucal","0.97097","robin"],["African gray parrot","hummingbird","dragonfly","crane","https://image.ibb.co/gPwVqH/hummingbird.jpg","https://image.ibb.co/hqdAqH/hummingbird_gcam_resnet152.png","hummingbird","1.000","hummingbird"],["spoonbill","peacock","jay","house finch","https://image.ibb.co/hOkjHx/peacock.jpg","https://image.ibb.co/jkYocx/peacock_gcam_resnet152.png","peacock","0.999989999","peacock"],["drake","red-breasted merganser","ruddy turnstone","redshank","https://image.ibb.co/gjvejc/redbreastedmerganser.jpg","https://image.ibb.co/b5WwVH/drake_gcam_resnet152.png","drake","0.716489","red-breasted merganser"],["red-backed sandpiper","redshank","ptarmigan","dowitcher","https://image.ibb.co/huDh4c/dowitcher.jpg","https://image.ibb.co/hmth4c/dowitcher_gcam_resnet152.png","dowitcher","0.973961481","dowitcher"],["cock","partridge","drake","hen","https://image.ibb.co/cfotAH/hen.jpg","https://image.ibb.co/gecaPc/cock_gcam_resnet152.png","cock","0.56361","hen"]];
+a = [["hippo","flamingo","Ibizan hound","Indian elephant", "https://image.ibb.co/dFeQwn/flamingo.jpg", "https://image.ibb.co/nFY797/flamingo_gcam_resnet152.png", "flamingo", "0.999989995", "flamingo"],["little blue heron","toucan","black swan","king penguin", "https://image.ibb.co/g9ocbn/blackswan.jpg", "https://image.ibb.co/eW7OhS/black_swan_gcam_resnet152.png", "black swan", "1.000", "black swan"],["great grey owl","ostrich","white stork","quail","https://image.ibb.co/iGCW2S/greatgreyowl.jpg", "https://image.ibb.co/gJSCbn/great_grey_owl_gcam_resnet152.png", "great grey owl", "1.000", "great grey owl"],["African gray parrot","hummingbird","dragonfly","crane","https://image.ibb.co/mQMfwn/hummingbird.jpg","https://image.ibb.co/eDgup7/hummingbird_gcam_resnet152.png","hummingbird","1.000","hummingbird"],["fountain","peacock","jay","umbrella","https://image.ibb.co/ijnjp7/peacock.jpg","https://image.ibb.co/bxXZp7/peacock_gcam_resnet152.png","peacock","1.000","peacock"],["bald eagle","vulture","hen","kite","https://image.ibb.co/hWz3hS/baldeagle_Ad.jpg","https://image.ibb.co/ez6ihS/kite_gcam_resnet152.png","kite","0.98639","bald eagle"],["king penguin","ruffed grouse","jay","pelican","https://image.ibb.co/bPnCbn/pelican_Ad.jpg","https://image.ibb.co/fJMihS/king_penguin_gcam_resnet152.png","king penguin","0.97724","pelican"],["tree frog","vulture","alligator lizard","standard poodle","https://image.ibb.co/nt7vwn/vulture_Ad.jpg","https://image.ibb.co/fgO797/standard_poodle_gcam_resnet152.png","standard poodle","0.990768175","vulture"],["toucan","albatross","oystercatcher","great white heron","https://image.ibb.co/jrQb2S/toucanAd.jpg","https://image.ibb.co/c2fn97/American_egret_gcam_resnet152.png","great white heron","1.000","toucan"],["hen","goose","robin","stingray","https://image.ibb.co/fS1AU7/henAd.jpg","https://image.ibb.co/dVPsbn/goose_gcam_resnet152.png","goose","0.994044998","hen"],["partridge","chickadee","prairie chicken","cock","https://image.ibb.co/iPtkwn/prairiechicken.jpg","https://image.ibb.co/f5JJGn/prairie_chicken_gcam_resnet152.png","tprairie chicken","0.999979998","prairie chicken"],["indigo bird","sulphur-crested cockatoo","lorikeet","macaw","https://image.ibb.co/fFXH97/macaw.jpg","https://image.ibb.co/eDvn97/macaw_gcam_resnet152.png","macaw","0.99999","macaw"],["hornbill","black stork","crane","black grouse","https://image.ibb.co/cMAn97/blackstork.jpg","https://image.ibb.co/f9EQwn/black_stork_gcam_resnet152.png","black stork","0.999498562","black stork"],["limpkin","peacock","African gray parrot","bittern","https://image.ibb.co/irjuNS/limpkin.jpg","https://image.ibb.co/hr5Xbn/limpkin_gcam_resnet152.png","limpkin","0.999989998","limpkin"],["red-backed sandpiper","redshank","ptarmigan","dowitcher","https://image.ibb.co/bJ4B2S/dowitcher.jpg","https://image.ibb.co/kx3w2S/dowitcher_gcam_resnet152.png","dowitcher","0.965790567","dowitcher"],["water ouzel","oystercatcher","snowbird","water hen","https://image.ibb.co/eG5C97/waterouzel_Ad.jpg","https://image.ibb.co/jUMup7/oystercatcher_gcam_resnet152.png","oystercatcher","0.987968195","water ouzel"],["ruffed grouse","coucal","bustard","brambling","https://image.ibb.co/j5P0wn/coucalAd.jpg","https://image.ibb.co/bP0Xbn/brambling_gcam_resnet152.png","brambling","0.999875721","coucal"],["drake","red-breasted merganser","ruddy turnstone","redshank","https://image.ibb.co/na7Cbn/redbreastedmerganser_Ad.jpg","https://image.ibb.co/mUuB2S/redshank_gcam_resnet152.png","redshank","0.96901","red-breasted merganser"],["spoonbill","jacamar","house finch","bulbul","https://image.ibb.co/bwNs97/jacamar_Ad.jpg","https://image.ibb.co/kaqb2S/bulbul_gcam_resnet152.png","bulbul","0.98183566","jacamar"],["bee eater","European gallinule","junco","magpie","https://image.ibb.co/dxgihS/juncoAd.jpg","https://image.ibb.co/i1O797/European_gallinule_gcam_resnet152.png","European gallinule","0.999197673","junco"]];
 
 var j, x, i;
 for (i = a.length - 1; i > 0; i--) {
@@ -61,39 +63,31 @@ document.getElementById("f"+(m+1).toString()).innerHTML = "The correct answer wa
 }
 document.getElementById("i"+(2*m+1).toString()).src = a[m][4];
 document.getElementById("i"+(2*m+2).toString()).src = a[m][5];
-
-var canvasDivs = document.getElementsByClassName('canvasDiv');
-var canvasDiv = canvasDivs[m];
-var canvas = document.createElement('CANVAS');
-canvas.setAttribute('width', 224);
-canvas.setAttribute('height', 224);
-canvasDiv.appendChild(canvas);
-if(typeof G_vmlCanvasManager != 'undefined') {
-	canvas = G_vmlCanvasManager.initElement(canvas);
 }
+
+var canvas = document.getElementById("canvas1");
 var context = canvas.getContext("2d");
 var outlineImage = new Image();
-outlineImage.src = a[m][4];
-context.drawImage(outlineImage, 0, 0, context.canvas.width, context.canvas.height);
+outlineImage.src = a[0][4];
+context.drawImage(outlineImage, 0, 0, 224, 224);
 
-var clickX = new Array();
-var clickY = new Array();
-var clickDrag = new Array();
+canvas.clickX = new Array();
+canvas.clickY = new Array();
+canvas.clickDrag = new Array();
+canvas.clickSize = new Array();
+canvas.curSize = "normal";
 var paint;
 
 canvas.addEventListener("mousedown",function(e){
-  var mouseX = e.pageX - this.offsetLeft;
-  var mouseY = e.pageY - this.offsetTop;
-		
   paint = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, clickX, clickY);
-  redraw(clickX, clickY);
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context,this.clickDrag,this.clickSize);
 });
 
 canvas.addEventListener("mousemove",function(e){
   if(paint){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, clickX, clickY);
-  redraw(clickX, clickY);
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, canvas.clickY, context,this.clickDrag,this.clickSize);
   }
 });
 
@@ -103,22 +97,676 @@ paint = false;
 
 canvas.addEventListener("mouseleave",function(e){
   paint = false;
-  });
-}
 });
 
-function addClick(x, y, dragging, clickX, clickY) {
+var canvas2 = document.getElementById("canvas2");
+var context2 = canvas2.getContext("2d");
+var outlineImage2 = new Image();
+outlineImage2.src = a[1][4];
+context2.drawImage(outlineImage2, 0, 0, 224, 224);
+
+canvas2.clickX = new Array();
+canvas2.clickY = new Array();
+canvas2.clickDrag = new Array();
+canvas2.clickSize = new Array();
+canvas2.curSize = "normal";
+var paint2;
+
+canvas2.addEventListener("mousedown",function(e){
+  paint2 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context2,this.clickDrag,this.clickSize);
+});
+
+canvas2.addEventListener("mousemove",function(e){
+  if(paint2){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context2,this.clickDrag,this.clickSize);
+  }
+});
+
+canvas2.addEventListener("mouseup",function(e){
+paint2 = false;
+});
+
+canvas2.addEventListener("mouseleave",function(e){
+  paint2 = false;
+  });
+
+var canvas3 = document.getElementById("canvas3");
+var context3 = canvas3.getContext("2d");
+var outlineImage3 = new Image();
+outlineImage3.src = a[2][4];
+context3.drawImage(outlineImage3, 0, 0, 224, 224);
+
+canvas3.clickX = new Array();
+canvas3.clickY = new Array();
+canvas3.clickDrag = new Array();
+canvas3.clickSize = new Array();
+canvas3.curSize = "normal";
+var paint3;
+
+canvas3.addEventListener("mousedown",function(e){
+  paint3 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context3, this.clickDrag,this.clickSize);
+});
+
+canvas3.addEventListener("mousemove",function(e){
+  if(paint3){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context3,this.clickDrag,this.clickSize);
+  }
+});
+
+canvas3.addEventListener("mouseup",function(e){
+paint3 = false;
+});
+
+canvas3.addEventListener("mouseleave",function(e){
+  paint3 = false;
+  });
+
+var canvas4 = document.getElementById("canvas4");
+var context4 = canvas4.getContext("2d");
+var outlineImage4 = new Image();
+outlineImage4.src = a[3][4];
+context4.drawImage(outlineImage4, 0, 0, 224, 224);
+
+canvas4.clickX = new Array();
+canvas4.clickY = new Array();
+canvas4.clickDrag = new Array();
+canvas4.clickSize = new Array();
+canvas4.curSize = "normal";
+var paint4;
+
+canvas4.addEventListener("mousedown",function(e){
+  paint4 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context4, this.clickDrag,this.clickSize);
+});
+
+canvas4.addEventListener("mousemove",function(e){
+  if(paint4){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context4,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas4.addEventListener("mouseup",function(e){
+paint4 = false;
+});
+
+canvas4.addEventListener("mouseleave",function(e){
+  paint4 = false;
+});
+
+var canvas5 = document.getElementById("canvas5");
+var context5 = canvas5.getContext("2d");
+var outlineImage5 = new Image();
+outlineImage5.src = a[4][4];
+context5.drawImage(outlineImage5, 0, 0, 224, 224);
+
+canvas5.clickX = new Array();
+canvas5.clickY = new Array();
+canvas5.clickDrag = new Array();
+canvas5.clickSize = new Array();
+canvas5.curSize = "normal";
+var paint5;
+
+canvas5.addEventListener("mousedown",function(e){
+  paint5 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context5, this.clickDrag,this.clickSize);
+});
+
+canvas5.addEventListener("mousemove",function(e){
+  if(paint5){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context5,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas5.addEventListener("mouseup",function(e){
+paint5 = false;
+});
+
+canvas5.addEventListener("mouseleave",function(e){
+  paint5 = false;
+  });
+
+var canvas6 = document.getElementById("canvas6");
+var context6 = canvas6.getContext("2d");
+var outlineImage6 = new Image();
+outlineImage6.src = a[5][4];
+context6.drawImage(outlineImage6, 0, 0, 224, 224);
+
+canvas6.clickX = new Array();
+canvas6.clickY = new Array();
+canvas6.clickDrag = new Array();
+canvas6.clickSize = new Array();
+canvas6.curSize = "normal";
+var paint6;
+
+canvas6.addEventListener("mousedown",function(e){
+  paint6 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context6, this.clickDrag,this.clickSize);
+});
+
+canvas6.addEventListener("mousemove",function(e){
+  if(paint6){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context6,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas6.addEventListener("mouseup",function(e){
+paint6 = false;
+});
+
+canvas6.addEventListener("mouseleave",function(e){
+  paint6 = false;
+  });
+
+var canvas7 = document.getElementById("canvas7");
+var context7 = canvas7.getContext("2d");
+var outlineImage7 = new Image();
+outlineImage7.src = a[6][4];
+context7.drawImage(outlineImage7, 0, 0, 224, 224);
+
+canvas7.clickX = new Array();
+canvas7.clickY = new Array();
+canvas7.clickDrag = new Array();
+canvas7.clickSize = new Array();
+canvas7.curSize = "normal";
+var paint7;
+
+canvas7.addEventListener("mousedown",function(e){
+  paint7 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context7, this.clickDrag,this.clickSize);
+});
+
+canvas7.addEventListener("mousemove",function(e){
+  if(paint7){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context7,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas7.addEventListener("mouseup",function(e){
+paint7 = false;
+});
+
+canvas7.addEventListener("mouseleave",function(e){
+  paint7 = false;
+  });
+
+var canvas8 = document.getElementById("canvas8");
+var context8 = canvas8.getContext("2d");
+var outlineImage8 = new Image();
+outlineImage8.src = a[7][4];
+context8.drawImage(outlineImage8, 0, 0, 224, 224);
+
+canvas8.clickX = new Array();
+canvas8.clickY = new Array();
+canvas8.clickDrag = new Array();
+canvas8.clickSize = new Array();
+canvas8.curSize = "normal";
+var paint8;
+
+canvas8.addEventListener("mousedown",function(e){
+  paint8 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context8, this.clickDrag,this.clickSize);
+});
+
+canvas8.addEventListener("mousemove",function(e){
+  if(paint8){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context8,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas8.addEventListener("mouseup",function(e){
+paint8 = false;
+});
+
+var canvas9 = document.getElementById("canvas9");
+var context9 = canvas9.getContext("2d");
+var outlineImage9 = new Image();
+outlineImage9.src = a[8][4];
+context9.drawImage(outlineImage9, 0, 0, 224, 224);
+
+canvas9.clickX = new Array();
+canvas9.clickY = new Array();
+canvas9.clickDrag = new Array();
+canvas9.clickSize = new Array();
+canvas9.curSize = "normal";
+var paint9;
+
+canvas9.addEventListener("mousedown",function(e){
+  paint9 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context9, this.clickDrag,this.clickSize);
+});
+
+canvas9.addEventListener("mousemove",function(e){
+  if(paint9){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context9,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas9.addEventListener("mouseup",function(e){
+paint9 = false;
+});
+
+canvas9.addEventListener("mouseleave",function(e){
+  paint9 = false;
+  });
+
+var canvas10 = document.getElementById("canvas10");
+var context10 = canvas10.getContext("2d");
+var outlineImage10 = new Image();
+outlineImage10.src = a[9][4];
+context10.drawImage(outlineImage10, 0, 0, 224, 224);
+
+canvas10.clickX = new Array();
+canvas10.clickY = new Array();
+canvas10.clickDrag = new Array();
+canvas10.clickSize = new Array();
+canvas10.curSize = "normal";
+var paint10;
+
+canvas10.addEventListener("mousedown",function(e){
+  paint10 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context10, this.clickDrag,this.clickSize);
+});
+
+canvas10.addEventListener("mousemove",function(e){
+  if(paint10){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context10,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas10.addEventListener("mouseup",function(e){
+paint10 = false;
+});
+
+canvas10.addEventListener("mouseleave",function(e){
+  paint10 = false;
+  });
+
+var canvas11 = document.getElementById("canvas11");
+var context11 = canvas11.getContext("2d");
+var outlineImage11 = new Image();
+outlineImage11.src = a[10][4];
+context11.drawImage(outlineImage11, 0, 0, 224, 224);
+
+canvas11.clickX = new Array();
+canvas11.clickY = new Array();
+canvas11.clickDrag = new Array();
+canvas11.clickSize = new Array();
+canvas11.curSize = "normal";
+var paint11;
+
+canvas11.addEventListener("mousedown",function(e){
+  paint11 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context11, this.clickDrag,this.clickSize);
+});
+
+canvas11.addEventListener("mousemove",function(e){
+  if(paint11){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context11,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas11.addEventListener("mouseup",function(e){
+paint11 = false;
+});
+
+canvas11.addEventListener("mouseleave",function(e){
+  paint11 = false;
+  });
+
+var canvas12 = document.getElementById("canvas12");
+var context12 = canvas12.getContext("2d");
+var outlineImage12 = new Image();
+outlineImage12.src = a[11][4];
+context12.drawImage(outlineImage12, 0, 0, 224, 224);
+
+canvas12.clickX = new Array();
+canvas12.clickY = new Array();
+canvas12.clickDrag = new Array();
+canvas12.clickSize = new Array();
+canvas12.curSize = "normal";
+var paint12;
+
+canvas12.addEventListener("mousedown",function(e){
+  paint12 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context12, this.clickDrag,this.clickSize);
+});
+
+canvas12.addEventListener("mousemove",function(e){
+  if(paint12){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context12,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas12.addEventListener("mouseup",function(e){
+paint12 = false;
+});
+
+canvas12.addEventListener("mouseleave",function(e){
+  paint12 = false;
+  });
+
+var canvas13 = document.getElementById("canvas13");
+var context13 = canvas13.getContext("2d");
+var outlineImage13 = new Image();
+outlineImage13.src = a[12][4];
+context13.drawImage(outlineImage13, 0, 0, 224, 224);
+
+canvas13.clickX = new Array();
+canvas13.clickY = new Array();
+canvas13.clickDrag = new Array();
+canvas13.clickSize = new Array();
+canvas13.curSize = "normal";
+var paint13;
+
+canvas13.addEventListener("mousedown",function(e){
+  paint13 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context13, this.clickDrag,this.clickSize);
+});
+
+canvas13.addEventListener("mousemove",function(e){
+  if(paint13){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context13,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas13.addEventListener("mouseup",function(e){
+paint13 = false;
+});
+
+canvas13.addEventListener("mouseleave",function(e){
+  paint13 = false;
+  });
+
+var canvas14 = document.getElementById("canvas14");
+var context14 = canvas14.getContext("2d");
+var outlineImage14 = new Image();
+outlineImage14.src = a[13][4];
+context14.drawImage(outlineImage14, 0, 0, 224, 224);
+
+canvas14.clickX = new Array();
+canvas14.clickY = new Array();
+canvas14.clickDrag = new Array();
+canvas14.clickSize = new Array();
+canvas14.curSize = "normal";
+var paint14;
+
+canvas14.addEventListener("mousedown",function(e){
+  paint14 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context14, this.clickDrag,this.clickSize);
+});
+
+canvas14.addEventListener("mousemove",function(e){
+  if(paint14){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context14,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas14.addEventListener("mouseup",function(e){
+paint14 = false;
+});
+
+canvas14.addEventListener("mouseleave",function(e){
+  paint14 = false;
+  });
+
+var canvas15 = document.getElementById("canvas15");
+var context15 = canvas15.getContext("2d");
+var outlineImage15 = new Image();
+outlineImage15.src = a[14][4];
+context15.drawImage(outlineImage15, 0, 0, 224, 224);
+
+canvas15.clickX = new Array();
+canvas15.clickY = new Array();
+canvas15.clickDrag = new Array();
+canvas15.clickSize = new Array();
+canvas15.curSize = "normal";
+var paint15;
+
+canvas15.addEventListener("mousedown",function(e){
+  paint15 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context15, this.clickDrag,this.clickSize);
+});
+
+canvas15.addEventListener("mousemove",function(e){
+  if(paint15){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context15,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas15.addEventListener("mouseup",function(e){
+paint15 = false;
+});
+
+canvas15.addEventListener("mouseleave",function(e){
+  paint15 = false;
+  });
+
+var canvas16 = document.getElementById("canvas16");
+var context16 = canvas16.getContext("2d");
+var outlineImage16 = new Image();
+outlineImage16.src = a[15][4];
+context16.drawImage(outlineImage16, 0, 0, 224, 224);
+
+canvas16.clickX = new Array();
+canvas16.clickY = new Array();
+canvas16.clickDrag = new Array();
+canvas16.clickSize = new Array();
+canvas16.curSize = "normal";
+var paint16;
+
+canvas16.addEventListener("mousedown",function(e){
+  paint16 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context16, this.clickDrag,this.clickSize);
+});
+
+canvas16.addEventListener("mousemove",function(e){
+  if(paint16){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context16,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas16.addEventListener("mouseup",function(e){
+paint16 = false;
+});
+
+canvas16.addEventListener("mouseleave",function(e){
+  paint16 = false;
+  });
+
+var canvas17 = document.getElementById("canvas17");
+var context17 = canvas17.getContext("2d");
+var outlineImage17 = new Image();
+outlineImage17.src = a[16][4];
+context17.drawImage(outlineImage17, 0, 0, 224, 224);
+
+canvas17.clickX = new Array();
+canvas17.clickY = new Array();
+canvas17.clickDrag = new Array();
+canvas17.clickSize = new Array();
+canvas17.curSize = "normal";
+var paint17;
+
+canvas17.addEventListener("mousedown",function(e){
+  paint17 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context17, this.clickDrag,this.clickSize);
+});
+
+canvas17.addEventListener("mousemove",function(e){
+  if(paint17){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context17,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas17.addEventListener("mouseup",function(e){
+paint17 = false;
+});
+
+canvas17.addEventListener("mouseleave",function(e){
+  paint17 = false;
+  });
+
+var canvas18 = document.getElementById("canvas18");
+var context18 = canvas18.getContext("2d");
+var outlineImage18 = new Image();
+outlineImage18.src = a[17][4];
+context18.drawImage(outlineImage18, 0, 0, 224, 224);
+
+canvas18.clickX = new Array();
+canvas18.clickY = new Array();
+canvas18.clickDrag = new Array();
+canvas18.clickSize = new Array();
+canvas18.curSize = "normal";
+var paint18;
+
+canvas18.addEventListener("mousedown",function(e){
+  paint18 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context18, this.clickDrag,this.clickSize);
+});
+
+canvas18.addEventListener("mousemove",function(e){
+  if(paint18){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context18,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas18.addEventListener("mouseup",function(e){
+paint18 = false;
+});
+
+canvas18.addEventListener("mouseleave",function(e){
+  paint18 = false;
+  });
+
+var canvas19 = document.getElementById("canvas19");
+var context19 = canvas19.getContext("2d");
+var outlineImage19 = new Image();
+outlineImage19.src = a[18][4];
+context19.drawImage(outlineImage19, 0, 0, 224, 224);
+
+canvas19.clickX = new Array();
+canvas19.clickY = new Array();
+canvas19.clickDrag = new Array();
+canvas19.clickSize = new Array();
+canvas19.curSize = "normal";
+var paint19;
+
+canvas19.addEventListener("mousedown",function(e){
+  paint19 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context19, this.clickDrag,this.clickSize);
+});
+
+canvas19.addEventListener("mousemove",function(e){
+  if(paint19){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context19,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas19.addEventListener("mouseup",function(e){
+paint19 = false;
+});
+
+canvas19.addEventListener("mouseleave",function(e){
+  paint19 = false;
+  });
+
+var canvas20 = document.getElementById("canvas20");
+var context20 = canvas20.getContext("2d");
+var outlineImage20 = new Image();
+outlineImage20.src = a[19][4];
+context20.drawImage(outlineImage20, 0, 0, 224, 224);
+
+canvas20.clickX = new Array();
+canvas20.clickY = new Array();
+canvas20.clickDrag = new Array();
+canvas20.clickSize = new Array();
+canvas20.curSize = "normal";
+var paint20;
+
+canvas20.addEventListener("mousedown",function(e){
+  paint20 = true;
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+  redraw(this.clickX, this.clickY, context20, this.clickDrag,this.clickSize);
+});
+
+canvas20.addEventListener("mousemove",function(e){
+  if(paint20){
+  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize);
+  redraw(this.clickX, this.clickY, context20,this.clickDrag,this.clickSize);
+  }
+ });
+
+canvas20.addEventListener("mouseup",function(e){
+paint20 = false;
+});
+
+canvas20.addEventListener("mouseleave",function(e){
+  paint20 = false;
+});
+
+function addClick(x, y, dragging, clickX, clickY,clickDrag,clickSize,curSize) {
   clickX.push(x);
   clickY.push(y);
   clickDrag.push(dragging);
+  clickSize.push(curSize);
 }
 
-function redraw(clickX, clickY) {
-  context.strokeStyle = "#df4b26";
+function redraw(clickX, clickY,context,clickDrag,clickSize) {
   context.lineJoin = "round";
-  context.lineWidth = 5;
-			
-  for(var i=0; i < clickX.length; i++) {		
+  context.strokeStyle = "#FF0000";
+	
+  var radius;
+  for(var i=0; i < clickX.length; i++) {	
+  	if(clickSize[i] == "small"){
+			radius = 2;
+		}else if(clickSize[i] == "normal"){
+			radius = 5;
+		}else if(clickSize[i] == "large"){
+			radius = 10;
+		}else if(clickSize[i] == "huge"){
+			radius = 20;
+		}else{
+			alert("Error: Radius is zero for click " + i);
+			radius = 0;	
+	}
+
     context.beginPath();
     if(clickDrag[i] && i){
       context.moveTo(clickX[i-1], clickY[i-1]);
@@ -127,11 +775,41 @@ function redraw(clickX, clickY) {
      }
      context.lineTo(clickX[i], clickY[i]);
      context.closePath();
+     context.lineWidth = radius;
      context.stroke();
   }
 }
+});
+
+function clearCanvas(i)
+{
+	var canvas = document.getElementById("canvas"+i.toString());
+	var context = canvas.getContext("2d");
+	context.clearRect(0, 0, 224, 224);
+	var outlineImage = new Image();
+	outlineImage.src = a[i-1][4];
+	context.drawImage(outlineImage, 0, 0, 224, 224);
+
+	canvas.clickX = new Array();
+    canvas.clickY = new Array();
+    canvas.clickDrag = new Array();
+    canvas.clickSize = new Array();
+    canvas.curSize = "normal";
+}
+
+function drawSize(i,s) {
+	var canvas = document.getElementById("canvas"+i.toString());
+	canvas.curSize = s;
+}
 
 function myFunction() {
+var elements = document.getElementsByClassName('canvasDiv');
+var requiredElement = elements[0];
+requiredElement.classList.remove("canvasDiv");
+requiredElement.classList.add("showd");
+}
+
+function myFunction0() {
 var elements = document.getElementsByClassName('hideddd');
 var requiredElement = elements[0];
 requiredElement.classList.remove("hideddd");
@@ -180,8 +858,8 @@ requiredElement.classList.add("showedd");
 <div>
 <ul>
 <li>You will be working with an AI bot, as a team, to classify images.</li>
-<li>You will be asked to answer multiple-choice questions to classify 18 images.</li>
-<li>You will be asked to classify each image twice. First, you will classify a given image without any additional information. Afterward, you will be given the AI bot's answer, its confidence in its answer, and a visual explanation of its answer. With this new information, you will be asked to make a final classification of the image.</li>
+<li>You will be asked to to classify 20 images twice.</li>
+<li>For each image, you will first classify it without any additional information, and you will provide your confidence in your answer using a slider as well as your visual explanation of your choice by highlighting the portion of the image that helped you to make your choice. Afterward, you will be given the AI bot's answer, its confidence in its answer, and a visual explanation of its answer. With this new information, you will be asked to make a final classification of the image.</li>
 <li>The team's final answer will be determined based on an equal weighting of your final answer and the AI bot's final answer.</li>
 <li>You may not return to any question, so please choose your answers carefully.</li>
 </ul>
@@ -191,7 +869,6 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="bye">
 <p>Please categorize the image below.</p>
-<div class="canvasDiv"></div>
 <img id="i1" src="">
 <div class="radio"><input name="Q1Answer" type="radio" value="wait1" id="in1" onclick="myFunction()"/><label for="in1" id="op1">wait1</label></div>
 
@@ -200,6 +877,18 @@ requiredElement.classList.add("showedd");
 <div class="radio"><input name="Q1Answer" type="radio" value="wait3" id="in3" onclick="myFunction()"/><label for="in3" id="op3">wait3</label></div>
 
 <div class="radio"><input name="Q1Answer" type="radio" value="wait4" id="in4" onclick="myFunction()"/><label for="in4" id="op4">wait4</label></div>
+
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas1" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(1,'small')">Small</button>
+		<button type="button" onclick="drawSize(1,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(1,'large')">Large</button>
+		<button type="button" onclick="drawSize(1,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(1)">Clear</button></div>
+</div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,0);">
@@ -212,13 +901,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r1"></p>
 <img id="i2" src="">
-<div class="radio"><input name="Q2Answer" type="radio" value="wait5" id="in5" onclick="myFunction()"/><label for="in5" id="op5">wait5</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="wait5" id="in5" onclick="myFunction0()"/><label for="in5" id="op5">wait5</label></div>
 
-<div class="radio"><input name="Q2Answer" type="radio" value="wait6" id="in6" onclick="myFunction()"/><label for="in6" id="op6">wait6</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="wait6" id="in6" onclick="myFunction0()"/><label for="in6" id="op6">wait6</label></div>
 
-<div class="radio"><input name="Q2Answer" type="radio" value="wait7" id="in7" onclick="myFunction()"/><label for="in7" id="op7">wait7</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="wait7" id="in7" onclick="myFunction0()"/><label for="in7" id="op7">wait7</label></div>
 
-<div class="radio"><input name="Q2Answer" type="radio" value="wait8" id="in8" onclick="myFunction()"/><label for="in8" id="op8">wait8</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="wait8" id="in8" onclick="myFunction0()"/><label for="in8" id="op8">wait8</label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,1);">
@@ -235,7 +924,6 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
-<div class="canvasDiv"></div>
 <img id="i3" src="">
 <div class="radio"><input name="Q3Answer" type="radio" value="wait9" id="in9" onclick="myFunction()"/><label for="in9" id="op9">wait9</label></div>
 
@@ -244,6 +932,18 @@ requiredElement.classList.add("showedd");
 <div class="radio"><input name="Q3Answer" type="radio" value="wait11" id="in11" onclick="myFunction()"/><label for="in11" id="op11">wait11</label></div>
 
 <div class="radio"><input name="Q3Answer" type="radio" value="wait12" id="in12" onclick="myFunction()"/><label for="in12" id="op12">wait12</label></div>
+
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas2" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(2,'small')">Small</button>
+		<button type="button" onclick="drawSize(2,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(2,'large')">Large</button>
+		<button type="button" onclick="drawSize(2,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(2)">Clear</button></div>
+</div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,2);">
@@ -256,13 +956,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r2"></p>
 <img id="i4" src="">
-<div class="radio"><input name="Q4Answer" type="radio" value="wait13" id="in13" onclick="myFunction()"/><label for="in13" id="op13">wait13</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="wait13" id="in13" onclick="myFunction0()"/><label for="in13" id="op13">wait13</label></div>
 
-<div class="radio"><input name="Q4Answer" type="radio" value="wait14" id="in14" onclick="myFunction()"/><label for="in14" id="op14">wait14</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="wait14" id="in14" onclick="myFunction0()"/><label for="in14" id="op14">wait14</label></div>
 
-<div class="radio"><input name="Q4Answer" type="radio" value="wait15" id="in15" onclick="myFunction()"/><label for="in15" id="op15">wait15</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="wait15" id="in15" onclick="myFunction0()"/><label for="in15" id="op15">wait15</label></div>
 
-<div class="radio"><input name="Q4Answer" type="radio" value="wait16" id="in16" onclick="myFunction()"/><label for="in16" id="op16">wait16</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="wait16" id="in16" onclick="myFunction0()"/><label for="in16" id="op16">wait16</label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,3);">
@@ -279,7 +979,6 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
-<div class="canvasDiv"></div>
 <img id="i5" src="">
 <div class="radio"><input name="Q5Answer" type="radio" value="wait17" id="in17" onclick="myFunction()"/><label for="in17" id="op17">wait17</label></div>
 
@@ -288,6 +987,18 @@ requiredElement.classList.add("showedd");
 <div class="radio"><input name="Q5Answer" type="radio" value="wait19" id="in19" onclick="myFunction()"/><label for="in19" id="op19">wait19</label></div>
 
 <div class="radio"><input name="Q5Answer" type="radio" value="wait20" id="in20" onclick="myFunction()"/><label for="in20" id="op20">wait20</label></div>
+
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas3" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(3,'small')">Small</button>
+		<button type="button" onclick="drawSize(3,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(3,'large')">Large</button>
+		<button type="button" onclick="drawSize(3,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(3)">Clear</button></div>
+</div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,4);">
@@ -300,13 +1011,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r3"></p>
 <img id="i6" src="">
-<div class="radio"><input name="Q6Answer" type="radio" value="wait21" id="in21" onclick="myFunction()"/><label for="in21" id="op21">wait21</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="wait21" id="in21" onclick="myFunction0()"/><label for="in21" id="op21">wait21</label></div>
 
-<div class="radio"><input name="Q6Answer" type="radio" value="wait22" id="in22" onclick="myFunction()"/><label for="in22" id="op22">wait22</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="wait22" id="in22" onclick="myFunction0()"/><label for="in22" id="op22">wait22</label></div>
 
-<div class="radio"><input name="Q6Answer" type="radio" value="wait23" id="in23" onclick="myFunction()"/><label for="in23" id="op23">wait23</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="wait23" id="in23" onclick="myFunction0()"/><label for="in23" id="op23">wait23</label></div>
 
-<div class="radio"><input name="Q6Answer" type="radio" value="wait24" id="in24" onclick="myFunction()"/><label for="in24" id="op24">wait24</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="wait24" id="in24" onclick="myFunction0()"/><label for="in24" id="op24">wait24</label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,5);">
@@ -332,6 +1043,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q7Answer" type="radio" value="wait28" id="in28" onclick="myFunction()"/><label for="in28" id="op28">wait28</label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas4" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(4,'small')">Small</button>
+		<button type="button" onclick="drawSize(4,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(4,'large')">Large</button>
+		<button type="button" onclick="drawSize(4,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(1)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,6);">
 <input type="text" style="width: 18px" id="textInput6" value="">
@@ -343,13 +1066,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r4"></p>
 <img id="i8" src="">
-<div class="radio"><input name="Q8Answer" type="radio" value="wait29" id="in29" onclick="myFunction()"/><label for="in29" id="op29">wait29</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="wait29" id="in29" onclick="myFunction0()"/><label for="in29" id="op29">wait29</label></div>
 
-<div class="radio"><input name="Q8Answer" type="radio" value="wait30" id="in30" onclick="myFunction()"/><label for="in30" id="op30">wait30</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="wait30" id="in30" onclick="myFunction0()"/><label for="in30" id="op30">wait30</label></div>
 
-<div class="radio"><input name="Q8Answer" type="radio" value="wait31" id="in31" onclick="myFunction()"/><label for="in31" id="op31">wait31</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="wait31" id="in31" onclick="myFunction0()"/><label for="in31" id="op31">wait31</label></div>
 
-<div class="radio"><input name="Q8Answer" type="radio" value="wait32" id="in32" onclick="myFunction()"/><label for="in32" id="op32">wait32</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="wait32" id="in32" onclick="myFunction0()"/><label for="in32" id="op32">wait32</label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,7);">
@@ -375,6 +1098,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q9Answer" type="radio" value="" id="in36" onclick="myFunction()"/><label for="in36" id="op36"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas5" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(5,'small')">Small</button>
+		<button type="button" onclick="drawSize(5,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(5,'large')">Large</button>
+		<button type="button" onclick="drawSize(5,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(5)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,8);">
 <input type="text" style="width: 18px" id="textInput8" value="">
@@ -386,13 +1121,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r5"></p>
 <img id="i10" src="">
-<div class="radio"><input name="Q10Answer" type="radio" value="" id="in37" onclick="myFunction()"/><label for="in37" id="op37"></label></div>
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in37" onclick="myFunction0()"/><label for="in37" id="op37"></label></div>
 
-<div class="radio"><input name="Q10Answer" type="radio" value="" id="in38" onclick="myFunction()"/><label for="in38" id="op38"></label></div>
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in38" onclick="myFunction0()"/><label for="in38" id="op38"></label></div>
 
-<div class="radio"><input name="Q10Answer" type="radio" value="" id="in39" onclick="myFunction()"/><label for="in39" id="op39"></label></div>
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in39" onclick="myFunction0()"/><label for="in39" id="op39"></label></div>
 
-<div class="radio"><input name="Q10Answer" type="radio" value="" id="in40" onclick="myFunction()"/><label for="in40" id="op40"></label></div>
+<div class="radio"><input name="Q10Answer" type="radio" value="" id="in40" onclick="myFunction0()"/><label for="in40" id="op40"></label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,9);">
@@ -418,6 +1153,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q11Answer" type="radio" value="" id="in44" onclick="myFunction()"/><label for="in44" id="op44"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas6" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(6,'small')">Small</button>
+		<button type="button" onclick="drawSize(6,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(6,'large')">Large</button>
+		<button type="button" onclick="drawSize(6,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(6)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,10);">
 <input type="text" style="width: 18px" id="textInput10" value="">
@@ -429,13 +1176,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r6"></p>
 <img id="i12" src="">
-<div class="radio"><input name="Q12Answer" type="radio" value="" id="in45" onclick="myFunction()"/><label for="in45" id="op45"></label></div>
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in45" onclick="myFunction0()"/><label for="in45" id="op45"></label></div>
 
-<div class="radio"><input name="Q12Answer" type="radio" value="" id="in46" onclick="myFunction()"/><label for="in46" id="op46"></label></div>
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in46" onclick="myFunction0()"/><label for="in46" id="op46"></label></div>
 
-<div class="radio"><input name="Q12Answer" type="radio" value="" id="in47" onclick="myFunction()"/><label for="in47" id="op47"></label></div>
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in47" onclick="myFunction0()"/><label for="in47" id="op47"></label></div>
 
-<div class="radio"><input name="Q12Answer" type="radio" value="" id="in48" onclick="myFunction()"/><label for="in48" id="op48"></label></div>
+<div class="radio"><input name="Q12Answer" type="radio" value="" id="in48" onclick="myFunction0()"/><label for="in48" id="op48"></label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,11);">
@@ -461,6 +1208,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q13Answer" type="radio" value="" id="in52" onclick="myFunction()"/><label for="in52" id="op52"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas7" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(7,'small')">Small</button>
+		<button type="button" onclick="drawSize(7,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(7,'large')">Large</button>
+		<button type="button" onclick="drawSize(7,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(7)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,12);">
 <input type="text" style="width: 18px" id="textInput12" value="">
@@ -472,13 +1231,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r7"></p>
 <img id="i14" src="">
-<div class="radio"><input name="Q14Answer" type="radio" value="" id="in53" onclick="myFunction()"/><label for="in53" id="op53"></label></div>
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in53" onclick="myFunction0()"/><label for="in53" id="op53"></label></div>
 
-<div class="radio"><input name="Q14Answer" type="radio" value="" id="in54" onclick="myFunction()"/><label for="in54" id="op54"></label></div>
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in54" onclick="myFunction0()"/><label for="in54" id="op54"></label></div>
 
-<div class="radio"><input name="Q14Answer" type="radio" value="" id="in55" onclick="myFunction()"/><label for="in55" id="op55"></label></div>
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in55" onclick="myFunction0()"/><label for="in55" id="op55"></label></div>
 
-<div class="radio"><input name="Q14Answer" type="radio" value="" id="in56" onclick="myFunction()"/><label for="in56" id="op56"></label></div>
+<div class="radio"><input name="Q14Answer" type="radio" value="" id="in56" onclick="myFunction0()"/><label for="in56" id="op56"></label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,13);">
@@ -504,6 +1263,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q15Answer" type="radio" value="" id="in60" onclick="myFunction()"/><label for="in60" id="op60"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas8" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(8,'small')">Small</button>
+		<button type="button" onclick="drawSize(8,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(8,'large')">Large</button>
+		<button type="button" onclick="drawSize(8,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(8)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,14);">
 <input type="text" style="width: 18px" id="textInput14" value="">
@@ -515,13 +1286,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r8"></p>
 <img id="i16" src="">
-<div class="radio"><input name="Q16Answer" type="radio" value="" id="in61" onclick="myFunction()"/><label for="in61" id="op61"></label></div>
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in61" onclick="myFunction0()"/><label for="in61" id="op61"></label></div>
 
-<div class="radio"><input name="Q16Answer" type="radio" value="" id="in62" onclick="myFunction()"/><label for="in62" id="op62"></label></div>
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in62" onclick="myFunction0()"/><label for="in62" id="op62"></label></div>
 
-<div class="radio"><input name="Q16Answer" type="radio" value="" id="in63" onclick="myFunction()"/><label for="in63" id="op63"></label></div>
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in63" onclick="myFunction0()"/><label for="in63" id="op63"></label></div>
 
-<div class="radio"><input name="Q16Answer" type="radio" value="" id="in64" onclick="myFunction()"/><label for="in64" id="op64"></label></div>
+<div class="radio"><input name="Q16Answer" type="radio" value="" id="in64" onclick="myFunction0()"/><label for="in64" id="op64"></label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,15);">
@@ -547,6 +1318,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q17Answer" type="radio" value="" id="in68" onclick="myFunction()"/><label for="in68" id="op68"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas9" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(9,'small')">Small</button>
+		<button type="button" onclick="drawSize(9,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(9,'large')">Large</button>
+		<button type="button" onclick="drawSize(9,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(9)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,16);">
 <input type="text" style="width: 18px" id="textInput16" value="">
@@ -558,13 +1341,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r9"></p>
 <img id="i18" src="">
-<div class="radio"><input name="Q18Answer" type="radio" value="" id="in69" onclick="myFunction()"/><label for="in69" id="op69"></label></div>
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in69" onclick="myFunction0()"/><label for="in69" id="op69"></label></div>
 
-<div class="radio"><input name="Q18Answer" type="radio" value="" id="in70" onclick="myFunction()"/><label for="in70" id="op70"></label></div>
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in70" onclick="myFunction0()"/><label for="in70" id="op70"></label></div>
 
-<div class="radio"><input name="Q18Answer" type="radio" value="" id="in71" onclick="myFunction()"/><label for="in70" id="op71"></label></div>
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in71" onclick="myFunction0()"/><label for="in70" id="op71"></label></div>
 
-<div class="radio"><input name="Q18Answer" type="radio" value="" id="in72" onclick="myFunction()"/><label for="in70" id="op72"></label></div>
+<div class="radio"><input name="Q18Answer" type="radio" value="" id="in72" onclick="myFunction0()"/><label for="in70" id="op72"></label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,17);">
@@ -590,6 +1373,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q19Answer" type="radio" value="" id="in76" onclick="myFunction()"/><label for="in68" id="op76"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas10" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(10,'small')">Small</button>
+		<button type="button" onclick="drawSize(10,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(10,'large')">Large</button>
+		<button type="button" onclick="drawSize(10,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(10)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,18);">
 <input type="text" style="width: 18px" id="textInput18" value="">
@@ -601,13 +1396,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r10"></p>
 <img id="i20" src="">
-<div class="radio"><input name="Q20Answer" type="radio" value="" id="in77" onclick="myFunction()"/><label for="in77" id="op77"></label></div>
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in77" onclick="myFunction0()"/><label for="in77" id="op77"></label></div>
 
-<div class="radio"><input name="Q20Answer" type="radio" value="" id="in78" onclick="myFunction()"/><label for="in78" id="op78"></label></div>
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in78" onclick="myFunction0()"/><label for="in78" id="op78"></label></div>
 
-<div class="radio"><input name="Q20Answer" type="radio" value="" id="in79" onclick="myFunction()"/><label for="in79" id="op79"></label></div>
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in79" onclick="myFunction0()"/><label for="in79" id="op79"></label></div>
 
-<div class="radio"><input name="Q20Answer" type="radio" value="" id="in80" onclick="myFunction()"/><label for="in80" id="op80"></label></div>
+<div class="radio"><input name="Q20Answer" type="radio" value="" id="in80" onclick="myFunction0()"/><label for="in80" id="op80"></label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,19);">
@@ -633,6 +1428,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q21Answer" type="radio" value="" id="in84" onclick="myFunction()"/><label for="in84" id="op84"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas11" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(11,'small')">Small</button>
+		<button type="button" onclick="drawSize(11,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(11,'large')">Large</button>
+		<button type="button" onclick="drawSize(11,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(11)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,20);">
 <input type="text" style="width: 18px" id="textInput20" value="">
@@ -644,13 +1451,13 @@ requiredElement.classList.add("showedd");
 <fieldset class="hided">
 <p id="r11"></p>
 <img id="i22" src="">
-<div class="radio"><input name="Q22Answer" type="radio" value="" id="in85" onclick="myFunction()"/><label for="in85" id="op85"></label></div>
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in85" onclick="myFunction0()"/><label for="in85" id="op85"></label></div>
 
-<div class="radio"><input name="Q22Answer" type="radio" value="" id="in86" onclick="myFunction()"/><label for="in86" id="op86"></label></div>
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in86" onclick="myFunction0()"/><label for="in86" id="op86"></label></div>
 
-<div class="radio"><input name="Q22Answer" type="radio" value="" id="in87" onclick="myFunction()"/><label for="in87" id="op87"></label></div>
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in87" onclick="myFunction0()"/><label for="in87" id="op87"></label></div>
 
-<div class="radio"><input name="Q22Answer" type="radio" value="" id="in88" onclick="myFunction()"/><label for="in88" id="op88"></label></div>
+<div class="radio"><input name="Q22Answer" type="radio" value="" id="in88" onclick="myFunction0()"/><label for="in88" id="op88"></label></div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,21);">
@@ -675,6 +1482,18 @@ requiredElement.classList.add("showedd");
 <div class="radio"><input name="Q23Answer" type="radio" value="" id="in91" onclick="myFunction()"/><label for="in91" id="op91"></label></div>
 
 <div class="radio"><input name="Q23Answer" type="radio" value="" id="in92" onclick="myFunction()"/><label for="in92" id="op92"></label></div>
+
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas12" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(12,'small')">Small</button>
+		<button type="button" onclick="drawSize(12,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(12,'large')">Large</button>
+		<button type="button" onclick="drawSize(12,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(12)">Clear</button></div>
+</div>
 
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,22);">
@@ -719,6 +1538,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q25Answer" type="radio" value="" id="in100" onclick="myFunction()"/><label for="in100" id="op100"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas13" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(13,'small')">Small</button>
+		<button type="button" onclick="drawSize(13,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(13,'large')">Large</button>
+		<button type="button" onclick="drawSize(13,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(13)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,24);">
 <input type="text" style="width: 18px" id="textInput24" value="">
@@ -762,6 +1593,18 @@ requiredElement.classList.add("showedd");
 
 <div class="radio"><input name="Q27Answer" type="radio" value="" id="in108" onclick="myFunction()"/><label for="in108" id="op108"></label></div>
 
+<div class="canvasDiv">
+	<p>Please highlight the part of the image that led you to make your choice.</p>
+	<canvas id="canvas14" width="224" height="224" onclick="myFunction0()"></canvas>
+	<div>
+		Marker Size: <button type="button" onclick="drawSize(14,'small')">Small</button>
+		<button type="button" onclick="drawSize(14,'normal')">Normal</button>
+		<button type="button" onclick="drawSize(14,'large')">Large</button>
+		<button type="button" onclick="drawSize(14,'huge')">Huge</button>
+	</div>
+	<div><button type="button" onclick="clearCanvas(14)">Clear</button></div>
+</div>
+
 <div class="hideddd">
 <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,26);">
 <input type="text" style="width: 18px" id="textInput26" value="">
@@ -796,6 +1639,10 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
+<div class="canvasDiv">
+	<canvas id="canvas15" width="224" height="224"></canvas>
+	<div><button type="button" onclick="clearCanvas(15)">Clear</button></div>
+</div>
 <img id="i29" src="">
 <div class="radio"><input name="Q29Answer" type="radio" value="" id="in113" onclick="myFunction()"/><label for="in113" id="op113"></label></div>
 
@@ -839,6 +1686,10 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
+<div class="canvasDiv">
+	<canvas id="canvas16" width="224" height="224"></canvas>
+	<div><button type="button" onclick="clearCanvas(16)">Clear</button></div>
+</div>
 <img id="i31" src="">
 <div class="radio"><input name="Q31Answer" type="radio" value="" id="in121" onclick="myFunction()"/><label for="in121" id="op121"></label></div>
 
@@ -882,6 +1733,10 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
+<div class="canvasDiv">
+	<canvas id="canvas17" width="224" height="224"></canvas>
+	<div><button type="button" onclick="clearCanvas(17)">Clear</button></div>
+</div>
 <img id="i33" src="">
 <div class="radio"><input name="Q33Answer" type="radio" value="" id="in129" onclick="myFunction()"/><label for="in129" id="op129"></label></div>
 
@@ -925,6 +1780,10 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
+<div class="canvasDiv">
+	<canvas id="canvas18" width="224" height="224"></canvas>
+	<div><button type="button" onclick="clearCanvas(18)">Clear</button></div>
+</div>
 <img id="i35" src="">
 <div class="radio"><input name="Q35Answer" type="radio" value="" id="in137" onclick="myFunction()"/><label for="in137" id="op137"></label></div>
 
@@ -964,6 +1823,102 @@ requiredElement.classList.add("showedd");
 
 <fieldset class="hided">
 <p id="f18"></p>
+<button type="button" onclick="myFunction2(51)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<div class="canvasDiv">
+	<canvas id="canvas19" width="224" height="224"></canvas>
+	<div><button type="button" onclick="clearCanvas(19)">Clear</button></div>
+</div>
+<img id="i37" src="">
+<div class="radio"><input name="Q37Answer" type="radio" value="" id="in145" onclick="myFunction()"/><label for="in145" id="op145"></label></div>
+
+<div class="radio"><input name="Q37Answer" type="radio" value="" id="in146" onclick="myFunction()"/><label for="in146" id="op146"></label></div>
+
+<div class="radio"><input name="Q37Answer" type="radio" value="" id="in147" onclick="myFunction()"/><label for="in147" id="op147"></label></div>
+
+<div class="radio"><input name="Q37Answer" type="radio" value="" id="in148" onclick="myFunction()"/><label for="in148" id="op148"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,36);">
+<input type="text" style="width: 18px" id="textInput36" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(53)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r19"></p>
+<img id="i38" src="">
+<div class="radio"><input name="Q38Answer" type="radio" value="" id="in149" onclick="myFunction()"/><label for="in149" id="op149"></label></div>
+
+<div class="radio"><input name="Q38Answer" type="radio" value="" id="in150" onclick="myFunction()"/><label for="in150" id="op150"></label></div>
+
+<div class="radio"><input name="Q38Answer" type="radio" value="" id="in151" onclick="myFunction()"/><label for="in151" id="op151"></label></div>
+
+<div class="radio"><input name="Q38Answer" type="radio" value="" id="in152" onclick="myFunction()"/><label for="in152" id="op152"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,37);">
+<input type="text" style="width: 18px" id="textInput37" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(54)">Continue</button>
+</fieldset>
+
+
+<fieldset class="hided">
+<p id="f19"></p>
+<button type="button" onclick="myFunction2(52)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p>Please categorize the image below.</p>
+<div class="canvasDiv">
+	<canvas id="canvas20" width="224" height="224"></canvas>
+	<div><button type="button" onclick="clearCanvas(20)">Clear</button></div>
+</div>
+<img id="i39" src="">
+<div class="radio"><input name="Q39Answer" type="radio" value="" id="in153" onclick="myFunction()"/><label for="in153" id="op153"></label></div>
+
+<div class="radio"><input name="Q39Answer" type="radio" value="" id="in154" onclick="myFunction()"/><label for="in154" id="op154"></label></div>
+
+<div class="radio"><input name="Q39Answer" type="radio" value="" id="in155" onclick="myFunction()"/><label for="in155" id="op155"></label></div>
+
+<div class="radio"><input name="Q39Answer" type="radio" value="" id="in156" onclick="myFunction()"/><label for="in156" id="op156"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,38);">
+<input type="text" style="width: 18px" id="textInput38" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(55)">Continue</button>
+</fieldset>
+
+<fieldset class="hided">
+<p id="r20"></p>
+<img id="i40" src="">
+<div class="radio"><input name="Q40Answer" type="radio" value="" id="in157" onclick="myFunction()"/><label for="in157" id="op157"></label></div>
+
+<div class="radio"><input name="Q40Answer" type="radio" value="" id="in158" onclick="myFunction()"/><label for="in158" id="op158"></label></div>
+
+<div class="radio"><input name="Q40Answer" type="radio" value="" id="in159" onclick="myFunction()"/><label for="in159" id="op159"></label></div>
+
+<div class="radio"><input name="Q40Answer" type="radio" value="" id="in160" onclick="myFunction()"/><label for="in160" id="op160"></label></div>
+
+<div class="hideddd">
+<input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value,39);">
+<input type="text" style="width: 18px" id="textInput39" value="">
+</div>
+
+<button type="button" class="hidedd" onclick="myFunction2(56)">Continue</button>
+</fieldset>
+
+
+<fieldset class="hided">
+<p id="f20"></p>
 </fieldset>
 
 <p><input type='submit' id='submitButton' value='Submit' /></p></form>
