@@ -5,6 +5,7 @@
 <html>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 <style>
+/* classes to hide and show different survey elements so that the elements are presented in a logical order */
 .canvasDiv{display: none;}
 .hideddd{display: none;}
 .hided{display: none;}
@@ -22,770 +23,777 @@
 <script>
 var a = [];
 document.addEventListener("DOMContentLoaded", function(event) {
-a = [["hippo","flamingo","Ibizan hound","Indian elephant", "https://image.ibb.co/dFeQwn/flamingo.jpg", "https://image.ibb.co/mCDM6x/flamingo_gcam_resnet152.jpg", "flamingo", "0.999989995", "flamingo"],["little blue heron","toucan","black swan","king penguin", "https://image.ibb.co/g9ocbn/blackswan.jpg", "https://image.ibb.co/kv4B6x/black_swan_gcam_resnet152.jpg", "black swan", "1.000", "black swan"],["great grey owl","ostrich","white stork","quail","https://image.ibb.co/iGCW2S/greatgreyowl.jpg", "https://image.ibb.co/kLgVzH/great_grey_owl_gcam_resnet152.jpg", "great grey owl", "1.000", "great grey owl"],["African gray parrot","hummingbird","dragonfly","crane","https://image.ibb.co/mQMfwn/hummingbird.jpg","https://image.ibb.co/m2Ng6x/hummingbird_gcam_resnet152.jpg","hummingbird","1.000","hummingbird"],["fountain","peacock","jay","umbrella","https://image.ibb.co/ijnjp7/peacock.jpg","https://image.ibb.co/hE7ERx/peacock_gcam_resnet152.jpg","peacock","1.000","peacock"],["bald eagle","vulture","hen","kite","https://image.ibb.co/hWz3hS/baldeagle_Ad.jpg","https://image.ibb.co/cQAjRx/kite_gcam_resnet152.jpg","kite","0.98639","bald eagle"],["king penguin","ruffed grouse","jay","pelican","https://image.ibb.co/bPnCbn/pelican_Ad.jpg","https://image.ibb.co/mgY4Rx/king_penguin_gcam_resnet152.jpg","king penguin","0.97724","pelican"],["tree frog","vulture","alligator lizard","standard poodle","https://image.ibb.co/nt7vwn/vulture_Ad.jpg","https://image.ibb.co/cBDhDc/standard_poodle_gcam_resnet152.jpg","standard poodle","0.990768175","vulture"],["toucan","albatross","oystercatcher","great white heron","https://image.ibb.co/jrQb2S/toucanAd.jpg","https://image.ibb.co/iyNO3c/American_egret_gcam_resnet152.jpg","great white heron","1.000","toucan"],["hen","goose","robin","stingray","https://image.ibb.co/fS1AU7/henAd.jpg","https://image.ibb.co/hcSHUH/goose_gcam_resnet152.jpg","goose","0.994044998","hen"],["partridge","chickadee","prairie chicken","cock","https://image.ibb.co/iPtkwn/prairiechicken.jpg","https://image.ibb.co/hFHj9H/prairie_chicken_gcam_resnet152.jpg","tprairie chicken","0.999979998","prairie chicken"],["indigo bird","sulphur-crested cockatoo","lorikeet","macaw","https://image.ibb.co/fFXH97/macaw.jpg","https://image.ibb.co/bwyP9H/macaw_gcam_resnet152.jpg","macaw","0.99999","macaw"],["hornbill","black stork","crane","black grouse","https://image.ibb.co/cMAn97/blackstork.jpg","https://image.ibb.co/fCcsUH/black_stork_gcam_resnet152.jpg","black stork","0.999498562","black stork"],["limpkin","peacock","African gray parrot","bittern","https://image.ibb.co/irjuNS/limpkin.jpg","https://image.ibb.co/jtOubx/limpkin_gcam_resnet152.jpg","limpkin","0.999989998","limpkin"],["red-backed sandpiper","redshank","ptarmigan","dowitcher","https://image.ibb.co/bJ4B2S/dowitcher.jpg","https://image.ibb.co/gCoSwx/dowitcher_gcam_resnet152.jpg","dowitcher","0.965790567","dowitcher"],["water ouzel","oystercatcher","snowbird","water hen","https://image.ibb.co/eG5C97/waterouzel_Ad.jpg","https://image.ibb.co/btmK9H/oystercatcher_gcam_resnet152.jpg","oystercatcher","0.987968195","water ouzel"],["ruffed grouse","coucal","bustard","brambling","https://image.ibb.co/j5P0wn/coucalAd.jpg","https://image.ibb.co/m4BVGx/brambling_gcam_resnet152.jpg","brambling","0.999875721","coucal"],["drake","red-breasted merganser","ruddy turnstone","redshank","https://image.ibb.co/na7Cbn/redbreastedmerganser_Ad.jpg","https://image.ibb.co/ffPBOc/redshank_gcam_resnet152.jpg","redshank","0.96901","red-breasted merganser"],["spoonbill","jacamar","house finch","bulbul","https://image.ibb.co/bwNs97/jacamar_Ad.jpg","https://image.ibb.co/m3VJ3c/bulbul_gcam_resnet152.jpg","bulbul","0.98183566","jacamar"],["bee eater","European gallinule","junco","magpie","https://image.ibb.co/dxgihS/juncoAd.jpg","https://image.ibb.co/g8Jo3c/European_gallinule_gcam_resnet152.jpg","European gallinule","0.999197673","junco"]];
-
-var j, x, i;
-for (i = a.length - 1; i > 0; i--) {
-j = Math.floor(Math.random() * (i + 1));
-x = a[i];
-a[i] = a[j];
-a[j] = x;
-}
-
-for(k=0; k < (2*a.length); k++) {
-var x = 4*k+1;
-var y = Math.floor(k/2.0);
-
-poss = [0,1,2,3];
-var p, r, s;
-for (s = poss.length - 1; s > 0; s--) {
-p = Math.floor(Math.random() * (s + 1));
-r = poss[s];
-poss[s] = poss[p];
-poss[p] = r;
-}
-
-document.getElementById("op"+x.toString()).innerHTML = a[y][poss[0]];
-document.getElementById("in"+x.toString()).value = a[y][poss[0]];
-document.getElementById("op"+(x+1).toString()).innerHTML = a[y][poss[1]];
-document.getElementById("in"+(x+1).toString()).value = a[y][poss[0]];
-document.getElementById("op"+(x+2).toString()).innerHTML = a[y][poss[2]];
-document.getElementById("in"+(x+2).toString()).value = a[y][poss[2]];
-document.getElementById("op"+(x+3).toString()).innerHTML = a[y][poss[3]];
-document.getElementById("in"+(x+3).toString()).value = a[y][poss[3]];
-}
-for(m=0; m < a.length; m++) {
-document.getElementById("r"+(m+1).toString()).innerHTML = "AI's Decision: "+a[m][6]+"; Confidence: "+a[m][7]+". Please make a final decision.";
-if(m==a.length-1){
-document.getElementById("f"+(m+1).toString()).innerHTML = "The correct answer was "+a[m][8]+". Please answer the next few questions regarding the experiment.";
-}
-else{
-document.getElementById("f"+(m+1).toString()).innerHTML = "The correct answer was "+a[m][8]+". Press 'Continue' to move on to the next question.";
-}
-document.getElementById("i"+(2*m+1).toString()).src = a[m][4];
-document.getElementById("i"+(2*m+2).toString()).src = a[m][5];
-}
-
-var canvas = document.getElementById("canvas1");
-var context = canvas.getContext("2d");
-var outlineImage = new Image();
-outlineImage.src = a[0][4];
-context.drawImage(outlineImage, 0, 0, 224, 224);
-
-canvas.clickX = new Array();
-canvas.clickY = new Array();
-canvas.clickDrag = new Array();
-canvas.clickSize = new Array();
-canvas.curSize = "normal";
-var paint;
-
-canvas.addEventListener("mousedown",function(e){
-  paint = true;
-  var context = canvas.getContext("2d");
-  redraw(this.clickX, this.clickY, context,this.clickDrag,this.clickSize);
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-});
-
-canvas.addEventListener("mousemove",function(e){
-  if(paint){
-  var context = canvas.getContext("2d");
-  redraw(this.clickX, canvas.clickY, context,this.clickDrag,this.clickSize);
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  }
-});
-
-canvas.addEventListener("mouseup",function(e){
-paint = false;
-});
-
-canvas.addEventListener("mouseleave",function(e){
-  paint = false;
-  });
-  
-var canvas2 = document.getElementById("canvas2");
-var context2 = canvas2.getContext("2d");
-var outlineImage2 = new Image();
-outlineImage2.src = a[1][4];
-context2.drawImage(outlineImage2, 0, 0, 224, 224);
-
-canvas2.clickX = new Array();
-canvas2.clickY = new Array();
-canvas2.clickDrag = new Array();
-canvas2.clickSize = new Array();
-canvas2.curSize = "normal";
-var paint2;
-
-canvas2.addEventListener("mousedown",function(e){
-  paint2 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context2,this.clickDrag,this.clickSize);
-});
-
-canvas2.addEventListener("mousemove",function(e){
-  if(paint2){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context2,this.clickDrag,this.clickSize);
-  }
-});
-
-canvas2.addEventListener("mouseup",function(e){
-paint2 = false;
-});
-
-canvas2.addEventListener("mouseleave",function(e){
-  paint2 = false;
-  });
-
-var canvas3 = document.getElementById("canvas3");
-var context3 = canvas3.getContext("2d");
-var outlineImage3 = new Image();
-outlineImage3.src = a[2][4];
-context3.drawImage(outlineImage3, 0, 0, 224, 224);
-
-canvas3.clickX = new Array();
-canvas3.clickY = new Array();
-canvas3.clickDrag = new Array();
-canvas3.clickSize = new Array();
-canvas3.curSize = "normal";
-var paint3;
-
-canvas3.addEventListener("mousedown",function(e){
-  paint3 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context3, this.clickDrag,this.clickSize);
-});
-
-canvas3.addEventListener("mousemove",function(e){
-  if(paint3){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context3,this.clickDrag,this.clickSize);
-  }
-});
-
-canvas3.addEventListener("mouseup",function(e){
-paint3 = false;
-});
-
-canvas3.addEventListener("mouseleave",function(e){
-  paint3 = false;
-  });
-
-var canvas4 = document.getElementById("canvas4");
-var context4 = canvas4.getContext("2d");
-var outlineImage4 = new Image();
-outlineImage4.src = a[3][4];
-context4.drawImage(outlineImage4, 0, 0, 224, 224);
-
-canvas4.clickX = new Array();
-canvas4.clickY = new Array();
-canvas4.clickDrag = new Array();
-canvas4.clickSize = new Array();
-canvas4.curSize = "normal";
-var paint4;
-
-canvas4.addEventListener("mousedown",function(e){
-  paint4 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context4, this.clickDrag,this.clickSize);
-});
-
-canvas4.addEventListener("mousemove",function(e){
-  if(paint4){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context4,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas4.addEventListener("mouseup",function(e){
-paint4 = false;
-});
-
-canvas4.addEventListener("mouseleave",function(e){
-  paint4 = false;
-});
-
-var canvas5 = document.getElementById("canvas5");
-var context5 = canvas5.getContext("2d");
-var outlineImage5 = new Image();
-outlineImage5.src = a[4][4];
-context5.drawImage(outlineImage5, 0, 0, 224, 224);
-
-canvas5.clickX = new Array();
-canvas5.clickY = new Array();
-canvas5.clickDrag = new Array();
-canvas5.clickSize = new Array();
-canvas5.curSize = "normal";
-var paint5;
-
-canvas5.addEventListener("mousedown",function(e){
-  paint5 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context5, this.clickDrag,this.clickSize);
-});
-
-canvas5.addEventListener("mousemove",function(e){
-  if(paint5){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context5,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas5.addEventListener("mouseup",function(e){
-paint5 = false;
-});
-
-canvas5.addEventListener("mouseleave",function(e){
-  paint5 = false;
-  });
-
-var canvas6 = document.getElementById("canvas6");
-var context6 = canvas6.getContext("2d");
-var outlineImage6 = new Image();
-outlineImage6.src = a[5][4];
-context6.drawImage(outlineImage6, 0, 0, 224, 224);
-
-canvas6.clickX = new Array();
-canvas6.clickY = new Array();
-canvas6.clickDrag = new Array();
-canvas6.clickSize = new Array();
-canvas6.curSize = "normal";
-var paint6;
-
-canvas6.addEventListener("mousedown",function(e){
-  paint6 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context6, this.clickDrag,this.clickSize);
-});
-
-canvas6.addEventListener("mousemove",function(e){
-  if(paint6){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context6,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas6.addEventListener("mouseup",function(e){
-paint6 = false;
-});
-
-canvas6.addEventListener("mouseleave",function(e){
-  paint6 = false;
-  });
-
-var canvas7 = document.getElementById("canvas7");
-var context7 = canvas7.getContext("2d");
-var outlineImage7 = new Image();
-outlineImage7.src = a[6][4];
-context7.drawImage(outlineImage7, 0, 0, 224, 224);
-
-canvas7.clickX = new Array();
-canvas7.clickY = new Array();
-canvas7.clickDrag = new Array();
-canvas7.clickSize = new Array();
-canvas7.curSize = "normal";
-var paint7;
-
-canvas7.addEventListener("mousedown",function(e){
-  paint7 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context7, this.clickDrag,this.clickSize);
-});
-
-canvas7.addEventListener("mousemove",function(e){
-  if(paint7){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context7,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas7.addEventListener("mouseup",function(e){
-paint7 = false;
-});
-
-canvas7.addEventListener("mouseleave",function(e){
-  paint7 = false;
-  });
-
-var canvas8 = document.getElementById("canvas8");
-var context8 = canvas8.getContext("2d");
-var outlineImage8 = new Image();
-outlineImage8.src = a[7][4];
-context8.drawImage(outlineImage8, 0, 0, 224, 224);
-
-canvas8.clickX = new Array();
-canvas8.clickY = new Array();
-canvas8.clickDrag = new Array();
-canvas8.clickSize = new Array();
-canvas8.curSize = "normal";
-var paint8;
-
-canvas8.addEventListener("mousedown",function(e){
-  paint8 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context8, this.clickDrag,this.clickSize);
-});
-
-canvas8.addEventListener("mousemove",function(e){
-  if(paint8){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context8,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas8.addEventListener("mouseup",function(e){
-paint8 = false;
-});
-
-var canvas9 = document.getElementById("canvas9");
-var context9 = canvas9.getContext("2d");
-var outlineImage9 = new Image();
-outlineImage9.src = a[8][4];
-context9.drawImage(outlineImage9, 0, 0, 224, 224);
-
-canvas9.clickX = new Array();
-canvas9.clickY = new Array();
-canvas9.clickDrag = new Array();
-canvas9.clickSize = new Array();
-canvas9.curSize = "normal";
-var paint9;
-
-canvas9.addEventListener("mousedown",function(e){
-  paint9 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context9, this.clickDrag,this.clickSize);
-});
-
-canvas9.addEventListener("mousemove",function(e){
-  if(paint9){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context9,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas9.addEventListener("mouseup",function(e){
-paint9 = false;
-});
-
-canvas9.addEventListener("mouseleave",function(e){
-  paint9 = false;
-  });
-
-var canvas10 = document.getElementById("canvas10");
-var context10 = canvas10.getContext("2d");
-var outlineImage10 = new Image();
-outlineImage10.src = a[9][4];
-context10.drawImage(outlineImage10, 0, 0, 224, 224);
-
-canvas10.clickX = new Array();
-canvas10.clickY = new Array();
-canvas10.clickDrag = new Array();
-canvas10.clickSize = new Array();
-canvas10.curSize = "normal";
-var paint10;
-
-canvas10.addEventListener("mousedown",function(e){
-  paint10 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context10, this.clickDrag,this.clickSize);
-});
-
-canvas10.addEventListener("mousemove",function(e){
-  if(paint10){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context10,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas10.addEventListener("mouseup",function(e){
-paint10 = false;
-});
-
-canvas10.addEventListener("mouseleave",function(e){
-  paint10 = false;
-  });
-
-var canvas11 = document.getElementById("canvas11");
-var context11 = canvas11.getContext("2d");
-var outlineImage11 = new Image();
-outlineImage11.src = a[10][4];
-context11.drawImage(outlineImage11, 0, 0, 224, 224);
-
-canvas11.clickX = new Array();
-canvas11.clickY = new Array();
-canvas11.clickDrag = new Array();
-canvas11.clickSize = new Array();
-canvas11.curSize = "normal";
-var paint11;
-
-canvas11.addEventListener("mousedown",function(e){
-  paint11 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context11, this.clickDrag,this.clickSize);
-});
-
-canvas11.addEventListener("mousemove",function(e){
-  if(paint11){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context11,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas11.addEventListener("mouseup",function(e){
-paint11 = false;
-});
-
-canvas11.addEventListener("mouseleave",function(e){
-  paint11 = false;
-  });
-
-var canvas12 = document.getElementById("canvas12");
-var context12 = canvas12.getContext("2d");
-var outlineImage12 = new Image();
-outlineImage12.src = a[11][4];
-context12.drawImage(outlineImage12, 0, 0, 224, 224);
-
-canvas12.clickX = new Array();
-canvas12.clickY = new Array();
-canvas12.clickDrag = new Array();
-canvas12.clickSize = new Array();
-canvas12.curSize = "normal";
-var paint12;
-
-canvas12.addEventListener("mousedown",function(e){
-  paint12 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context12, this.clickDrag,this.clickSize);
-});
-
-canvas12.addEventListener("mousemove",function(e){
-  if(paint12){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context12,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas12.addEventListener("mouseup",function(e){
-paint12 = false;
-});
-
-canvas12.addEventListener("mouseleave",function(e){
-  paint12 = false;
-  });
-
-var canvas13 = document.getElementById("canvas13");
-var context13 = canvas13.getContext("2d");
-var outlineImage13 = new Image();
-outlineImage13.src = a[12][4];
-context13.drawImage(outlineImage13, 0, 0, 224, 224);
-
-canvas13.clickX = new Array();
-canvas13.clickY = new Array();
-canvas13.clickDrag = new Array();
-canvas13.clickSize = new Array();
-canvas13.curSize = "normal";
-var paint13;
-
-canvas13.addEventListener("mousedown",function(e){
-  paint13 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context13, this.clickDrag,this.clickSize);
-});
-
-canvas13.addEventListener("mousemove",function(e){
-  if(paint13){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context13,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas13.addEventListener("mouseup",function(e){
-paint13 = false;
-});
-
-canvas13.addEventListener("mouseleave",function(e){
-  paint13 = false;
-  });
-
-var canvas14 = document.getElementById("canvas14");
-var context14 = canvas14.getContext("2d");
-var outlineImage14 = new Image();
-outlineImage14.src = a[13][4];
-context14.drawImage(outlineImage14, 0, 0, 224, 224);
-
-canvas14.clickX = new Array();
-canvas14.clickY = new Array();
-canvas14.clickDrag = new Array();
-canvas14.clickSize = new Array();
-canvas14.curSize = "normal";
-var paint14;
-
-canvas14.addEventListener("mousedown",function(e){
-  paint14 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context14, this.clickDrag,this.clickSize);
-});
-
-canvas14.addEventListener("mousemove",function(e){
-  if(paint14){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context14,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas14.addEventListener("mouseup",function(e){
-paint14 = false;
-});
-
-canvas14.addEventListener("mouseleave",function(e){
-  paint14 = false;
-  });
-
-var canvas15 = document.getElementById("canvas15");
-var context15 = canvas15.getContext("2d");
-var outlineImage15 = new Image();
-outlineImage15.src = a[14][4];
-context15.drawImage(outlineImage15, 0, 0, 224, 224);
-
-canvas15.clickX = new Array();
-canvas15.clickY = new Array();
-canvas15.clickDrag = new Array();
-canvas15.clickSize = new Array();
-canvas15.curSize = "normal";
-var paint15;
-
-canvas15.addEventListener("mousedown",function(e){
-  paint15 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context15, this.clickDrag,this.clickSize);
-});
-
-canvas15.addEventListener("mousemove",function(e){
-  if(paint15){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context15,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas15.addEventListener("mouseup",function(e){
-paint15 = false;
-});
-
-canvas15.addEventListener("mouseleave",function(e){
-  paint15 = false;
-  });
-
-var canvas16 = document.getElementById("canvas16");
-var context16 = canvas16.getContext("2d");
-var outlineImage16 = new Image();
-outlineImage16.src = a[15][4];
-context16.drawImage(outlineImage16, 0, 0, 224, 224);
-
-canvas16.clickX = new Array();
-canvas16.clickY = new Array();
-canvas16.clickDrag = new Array();
-canvas16.clickSize = new Array();
-canvas16.curSize = "normal";
-var paint16;
-
-canvas16.addEventListener("mousedown",function(e){
-  paint16 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context16, this.clickDrag,this.clickSize);
-});
-
-canvas16.addEventListener("mousemove",function(e){
-  if(paint16){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context16,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas16.addEventListener("mouseup",function(e){
-paint16 = false;
-});
-
-canvas16.addEventListener("mouseleave",function(e){
-  paint16 = false;
-  });
-
-var canvas17 = document.getElementById("canvas17");
-var context17 = canvas17.getContext("2d");
-var outlineImage17 = new Image();
-outlineImage17.src = a[16][4];
-context17.drawImage(outlineImage17, 0, 0, 224, 224);
-
-canvas17.clickX = new Array();
-canvas17.clickY = new Array();
-canvas17.clickDrag = new Array();
-canvas17.clickSize = new Array();
-canvas17.curSize = "normal";
-var paint17;
-
-canvas17.addEventListener("mousedown",function(e){
-  paint17 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context17, this.clickDrag,this.clickSize);
-});
-
-canvas17.addEventListener("mousemove",function(e){
-  if(paint17){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context17,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas17.addEventListener("mouseup",function(e){
-paint17 = false;
-});
-
-canvas17.addEventListener("mouseleave",function(e){
-  paint17 = false;
-  });
-
-var canvas18 = document.getElementById("canvas18");
-var context18 = canvas18.getContext("2d");
-var outlineImage18 = new Image();
-outlineImage18.src = a[17][4];
-context18.drawImage(outlineImage18, 0, 0, 224, 224);
-
-canvas18.clickX = new Array();
-canvas18.clickY = new Array();
-canvas18.clickDrag = new Array();
-canvas18.clickSize = new Array();
-canvas18.curSize = "normal";
-var paint18;
-
-canvas18.addEventListener("mousedown",function(e){
-  paint18 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context18, this.clickDrag,this.clickSize);
-});
-
-canvas18.addEventListener("mousemove",function(e){
-  if(paint18){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context18,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas18.addEventListener("mouseup",function(e){
-paint18 = false;
-});
-
-canvas18.addEventListener("mouseleave",function(e){
-  paint18 = false;
-  });
-
-var canvas19 = document.getElementById("canvas19");
-var context19 = canvas19.getContext("2d");
-var outlineImage19 = new Image();
-outlineImage19.src = a[18][4];
-context19.drawImage(outlineImage19, 0, 0, 224, 224);
-
-canvas19.clickX = new Array();
-canvas19.clickY = new Array();
-canvas19.clickDrag = new Array();
-canvas19.clickSize = new Array();
-canvas19.curSize = "normal";
-var paint19;
-
-canvas19.addEventListener("mousedown",function(e){
-  paint19 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context19, this.clickDrag,this.clickSize);
-});
-
-canvas19.addEventListener("mousemove",function(e){
-  if(paint19){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context19,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas19.addEventListener("mouseup",function(e){
-paint19 = false;
-});
-
-canvas19.addEventListener("mouseleave",function(e){
-  paint19 = false;
-  });
-
-var canvas20 = document.getElementById("canvas20");
-var context20 = canvas20.getContext("2d");
-var outlineImage20 = new Image();
-outlineImage20.src = a[19][4];
-context20.drawImage(outlineImage20, 0, 0, 224, 224);
-
-canvas20.clickX = new Array();
-canvas20.clickY = new Array();
-canvas20.clickDrag = new Array();
-canvas20.clickSize = new Array();
-canvas20.curSize = "normal";
-var paint20;
-
-canvas20.addEventListener("mousedown",function(e){
-  paint20 = true;
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context20, this.clickDrag,this.clickSize);
-});
-
-canvas20.addEventListener("mousemove",function(e){
-  if(paint20){
-  addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
-  redraw(this.clickX, this.clickY, context20,this.clickDrag,this.clickSize);
-  }
- });
-
-canvas20.addEventListener("mouseup",function(e){
-paint20 = false;
-});
-
-canvas20.addEventListener("mouseleave",function(e){
-  paint20 = false;
-});
-
-function addClick(x, y, dragging, clickX, clickY,clickDrag,clickSize,curSize) {
-  clickX.push(x);
-  clickY.push(y);
-  clickDrag.push(dragging);
-  clickSize.push(curSize);
-}
-
-function redraw(clickX, clickY,context,clickDrag,clickSize) {
-  context.lineJoin = "round";
-  context.strokeStyle = "#FF0000";
-	
-  var radius;
-  for(var i=0; i < clickX.length; i++) {	
-  	if(clickSize[i] == "small"){
-			radius = 2;
-		}else if(clickSize[i] == "normal"){
-			radius = 5;
-		}else if(clickSize[i] == "large"){
-			radius = 10;
-		}else if(clickSize[i] == "huge"){
-			radius = 20;
-		}else{
-			alert("Error: Radius is zero for click " + i);
-			radius = 0;	
+	/*array a holds the information for each question. Each question has an array containing the four possible answers to be shuffled, link to original image, link to visual explanation image, ai answer, ai confidence, and correct answer.*/ 
+	a = [["hippo","flamingo","Ibizan hound","Indian elephant", "https://image.ibb.co/dFeQwn/flamingo.jpg", "https://image.ibb.co/mCDM6x/flamingo_gcam_resnet152.jpg", "flamingo", "0.999989995", "flamingo"],["little blue heron","toucan","black swan","king penguin", "https://image.ibb.co/g9ocbn/blackswan.jpg", "https://image.ibb.co/kv4B6x/black_swan_gcam_resnet152.jpg", "black swan", "1.000", "black swan"],["great grey owl","ostrich","white stork","quail","https://image.ibb.co/iGCW2S/greatgreyowl.jpg", "https://image.ibb.co/kLgVzH/great_grey_owl_gcam_resnet152.jpg", "great grey owl", "1.000", "great grey owl"],["African gray parrot","hummingbird","dragonfly","crane","https://image.ibb.co/mQMfwn/hummingbird.jpg","https://image.ibb.co/m2Ng6x/hummingbird_gcam_resnet152.jpg","hummingbird","1.000","hummingbird"],["fountain","peacock","jay","umbrella","https://image.ibb.co/ijnjp7/peacock.jpg","https://image.ibb.co/hE7ERx/peacock_gcam_resnet152.jpg","peacock","1.000","peacock"],["bald eagle","vulture","hen","kite","https://image.ibb.co/hWz3hS/baldeagle.jpg","https://image.ibb.co/cQAjRx/kite_gcam_resnet152.jpg","kite","0.98639","bald eagle"],["king penguin","ruffed grouse","jay","pelican","https://image.ibb.co/bPnCbn/pelican.jpg","https://image.ibb.co/mgY4Rx/king_penguin_gcam_resnet152.jpg","king penguin","0.97724","pelican"],["tree frog","vulture","alligator lizard","standard poodle","https://image.ibb.co/nt7vwn/vulture.jpg","https://image.ibb.co/cBDhDc/standard_poodle_gcam_resnet152.jpg","standard poodle","0.990768175","vulture"],["toucan","albatross","oystercatcher","great white heron","https://image.ibb.co/jrQb2S/toucan.jpg","https://image.ibb.co/iyNO3c/American_egret_gcam_resnet152.jpg","great white heron","1.000","toucan"],["hen","goose","robin","stingray","https://image.ibb.co/fS1AU7/hen.jpg","https://image.ibb.co/hcSHUH/goose_gcam_resnet152.jpg","goose","0.994044998","hen"],["partridge","chickadee","prairie chicken","cock","https://image.ibb.co/iPtkwn/prairiechicken.jpg","https://image.ibb.co/hFHj9H/prairie_chicken_gcam_resnet152.jpg","prairie chicken","0.999979998","prairie chicken"],["indigo bird","sulphur-crested cockatoo","lorikeet","macaw","https://image.ibb.co/fFXH97/macaw.jpg","https://image.ibb.co/bwyP9H/macaw_gcam_resnet152.jpg","macaw","0.99999","macaw"],["hornbill","black stork","crane","black grouse","https://image.ibb.co/cMAn97/blackstork.jpg","https://image.ibb.co/fCcsUH/black_stork_gcam_resnet152.jpg","black stork","0.999498562","black stork"],["limpkin","peacock","African gray parrot","bittern","https://image.ibb.co/irjuNS/limpkin.jpg","https://image.ibb.co/jtOubx/limpkin_gcam_resnet152.jpg","limpkin","0.999989998","limpkin"],["red-backed sandpiper","redshank","ptarmigan","dowitcher","https://image.ibb.co/bJ4B2S/dowitcher.jpg","https://image.ibb.co/gCoSwx/dowitcher_gcam_resnet152.jpg","dowitcher","0.965790567","dowitcher"],["water ouzel","oystercatcher","snowbird","water hen","https://image.ibb.co/eG5C97/waterouzel.jpg","https://image.ibb.co/btmK9H/oystercatcher_gcam_resnet152.jpg","oystercatcher","0.987968195","water ouzel"],["ruffed grouse","coucal","bustard","brambling","https://image.ibb.co/j5P0wn/coucal.jpg","https://image.ibb.co/m4BVGx/brambling_gcam_resnet152.jpg","brambling","0.999875721","coucal"],["drake","red-breasted merganser","ruddy turnstone","redshank","https://image.ibb.co/na7Cbn/redbreastedmerganser.jpg","https://image.ibb.co/ffPBOc/redshank_gcam_resnet152.jpg","redshank","0.96901","red-breasted merganser"],["spoonbill","jacamar","house finch","bulbul","https://image.ibb.co/bwNs97/jacamar.jpg","https://image.ibb.co/m3VJ3c/bulbul_gcam_resnet152.jpg","bulbul","0.98183566","jacamar"],["bee eater","European gallinule","junco","magpie","https://image.ibb.co/dxgihS/junco.jpg","https://image.ibb.co/g8Jo3c/European_gallinule_gcam_resnet152.jpg","European gallinule","0.999197673","junco"]];
+
+	/* shuffle the questions in array a */
+	var j, x, i;
+	for (i = a.length - 1; i > 0; i--) {
+		j = Math.floor(Math.random() * (i + 1));
+		x = a[i];
+		a[i] = a[j];
+		a[j] = x;
 	}
 
-    context.beginPath();
-    if(clickDrag[i] && i){
-      context.moveTo(clickX[i-1], clickY[i-1]);
-     }else{
-       context.moveTo(clickX[i]-1, clickY[i]);
-     }
-     context.lineTo(clickX[i], clickY[i]);
-     context.closePath();
-     context.lineWidth = radius;
-     context.stroke();
-  }
-  }
+	/* shuffle the possible answers for each question and insert them into the document */
+	for(k=0; k < (2*a.length); k++) {
+		var x = 4*k+1;
+		var y = Math.floor(k/2.0);
 
-  var reveal = true;
+		poss = [0,1,2,3];
+		var p, r, s;
+		for (s = poss.length - 1; s > 0; s--) {
+			p = Math.floor(Math.random() * (s + 1));
+			r = poss[s];
+			poss[s] = poss[p];
+			poss[p] = r;
+		}
+
+		document.getElementById("op"+x.toString()).innerHTML = a[y][poss[0]];
+		document.getElementById("in"+x.toString()).value = a[y][poss[0]];
+		document.getElementById("op"+(x+1).toString()).innerHTML = a[y][poss[1]];
+		document.getElementById("in"+(x+1).toString()).value = a[y][poss[0]];
+		document.getElementById("op"+(x+2).toString()).innerHTML = a[y][poss[2]];
+		document.getElementById("in"+(x+2).toString()).value = a[y][poss[2]];
+		document.getElementById("op"+(x+3).toString()).innerHTML = a[y][poss[3]];
+		document.getElementById("in"+(x+3).toString()).value = a[y][poss[3]];
+	}
+
+	/* add images and information regarding ai decisions/confidences and correct answers to document */
+	for(m=0; m < a.length; m++) {
+		document.getElementById("r"+(m+1).toString()).innerHTML = "AI's Decision: "+a[m][6]+"; Confidence: "+a[m][7]+". Please make a final decision.";
+		if(m==a.length-1){
+			document.getElementById("f"+(m+1).toString()).innerHTML = "The correct answer was "+a[m][8]+". Please answer the next few questions regarding the experiment.";
+		}
+		else{
+			document.getElementById("f"+(m+1).toString()).innerHTML = "The correct answer was "+a[m][8]+". Press 'Continue' to move on to the next question.";
+		}
+		document.getElementById("i"+(2*m+1).toString()).src = a[m][4]; /* original image */
+		document.getElementById("i"+(2*m+2).toString()).src = a[m][5]; /* visual explanation image */
+	}
+
+	/* initialize canvases on which workers may draw their own visual explanations */
+	var canvas = document.getElementById("canvas1");
+	canvas.clickX = new Array(); /* array to remember x-coordinate of clicks on image */
+	canvas.clickY = new Array(); /* array to remember y-coordinate of clicks on image */
+	canvas.clickDrag = new Array(); /* array to remember if each click involves dragging */
+	canvas.clickSize = new Array(); /* array to remember click's marker size (small, normal, large, or huge) */
+	canvas.curSize = "normal"; /* variable to remember current size of marker */
+	var paint; /* Boolean variable to turn the ability to paint the canvas on or off as necessary */
+
+	/* function to update the canvas' arrays with click information when mousedown occurs */
+	canvas.addEventListener("mousedown",function(e){
+		paint = true;
+	  	var context = canvas.getContext("2d");
+		redraw(this.clickX, this.clickY, context,this.clickDrag,this.clickSize);
+		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	});
+
+	/* function to update the canvas' arrays with click information when mousemove occurs */
+	canvas.addEventListener("mousemove",function(e){
+	  	if(paint){
+			var context = canvas.getContext("2d");
+			redraw(this.clickX, canvas.clickY, context,this.clickDrag,this.clickSize);
+			addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	}
+	});
+
+	/* function to stop the ability to paint the canvas when mouse is up */
+	canvas.addEventListener("mouseup",function(e){
+		paint = false;
+	});
+
+	/* function to stop the ability to paint the canvas upon mouseleave */
+	canvas.addEventListener("mouseleave",function(e){
+		paint = false;
+	});
+	  
+	var canvas2 = document.getElementById("canvas2");
+	var context2 = canvas2.getContext("2d");
+	var outlineImage2 = new Image();
+	outlineImage2.src = a[1][4];
+	context2.drawImage(outlineImage2, 0, 0, 224, 224);
+
+	canvas2.clickX = new Array();
+	canvas2.clickY = new Array();
+	canvas2.clickDrag = new Array();
+	canvas2.clickSize = new Array();
+	canvas2.curSize = "normal";
+	var paint2;
+
+	canvas2.addEventListener("mousedown",function(e){
+		paint2 = true;
+		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+		redraw(this.clickX, this.clickY, context2,this.clickDrag,this.clickSize);
+	});
+
+	canvas2.addEventListener("mousemove",function(e){
+		if(paint2){
+			addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+			redraw(this.clickX, this.clickY, context2,this.clickDrag,this.clickSize);
+		}
+	});
+
+	canvas2.addEventListener("mouseup",function(e){
+		paint2 = false;
+	});
+
+	canvas2.addEventListener("mouseleave",function(e){
+		paint2 = false;
+	});
+
+	var canvas3 = document.getElementById("canvas3");
+	var context3 = canvas3.getContext("2d");
+	var outlineImage3 = new Image();
+	outlineImage3.src = a[2][4];
+	context3.drawImage(outlineImage3, 0, 0, 224, 224);
+
+	canvas3.clickX = new Array();
+	canvas3.clickY = new Array();
+	canvas3.clickDrag = new Array();
+	canvas3.clickSize = new Array();
+	canvas3.curSize = "normal";
+	var paint3;
+
+	canvas3.addEventListener("mousedown",function(e){
+		paint3 = true;
+		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+		redraw(this.clickX, this.clickY, context3, this.clickDrag,this.clickSize);
+	});
+
+	canvas3.addEventListener("mousemove",function(e){
+	  	if(paint3){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context3,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas3.addEventListener("mouseup",function(e){
+		paint3 = false;
+	});
+
+	canvas3.addEventListener("mouseleave",function(e){
+	  paint3 = false;
+	});
+
+	var canvas4 = document.getElementById("canvas4");
+	var context4 = canvas4.getContext("2d");
+	var outlineImage4 = new Image();
+	outlineImage4.src = a[3][4];
+	context4.drawImage(outlineImage4, 0, 0, 224, 224);
+
+	canvas4.clickX = new Array();
+	canvas4.clickY = new Array();
+	canvas4.clickDrag = new Array();
+	canvas4.clickSize = new Array();
+	canvas4.curSize = "normal";
+	var paint4;
+
+	canvas4.addEventListener("mousedown",function(e){
+		paint4 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context4, this.clickDrag,this.clickSize);
+	});
+
+	canvas4.addEventListener("mousemove",function(e){
+	  	if(paint4){
+			addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+		  	redraw(this.clickX, this.clickY, context4,this.clickDrag,this.clickSize);
+		}
+	 });
+
+	canvas4.addEventListener("mouseup",function(e){
+		paint4 = false;
+	});
+
+	canvas4.addEventListener("mouseleave",function(e){
+		paint4 = false;
+	});
+
+	var canvas5 = document.getElementById("canvas5");
+	var context5 = canvas5.getContext("2d");
+	var outlineImage5 = new Image();
+	outlineImage5.src = a[4][4];
+	context5.drawImage(outlineImage5, 0, 0, 224, 224);
+
+	canvas5.clickX = new Array();
+	canvas5.clickY = new Array();
+	canvas5.clickDrag = new Array();
+	canvas5.clickSize = new Array();
+	canvas5.curSize = "normal";
+	var paint5;
+
+	canvas5.addEventListener("mousedown",function(e){
+		paint5 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context5, this.clickDrag,this.clickSize);
+	});
+
+	canvas5.addEventListener("mousemove",function(e){
+		if(paint5){
+			addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context5,this.clickDrag,this.clickSize);
+		}
+	});
+
+	canvas5.addEventListener("mouseup",function(e){
+		paint5 = false;
+	});
+
+	canvas5.addEventListener("mouseleave",function(e){
+		paint5 = false;
+	});
+
+	var canvas6 = document.getElementById("canvas6");
+	var context6 = canvas6.getContext("2d");
+	var outlineImage6 = new Image();
+	outlineImage6.src = a[5][4];
+	context6.drawImage(outlineImage6, 0, 0, 224, 224);
+
+	canvas6.clickX = new Array();
+	canvas6.clickY = new Array();
+	canvas6.clickDrag = new Array();
+	canvas6.clickSize = new Array();
+	canvas6.curSize = "normal";
+	var paint6;
+
+	canvas6.addEventListener("mousedown",function(e){
+		paint6 = true;
+		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+		redraw(this.clickX, this.clickY, context6, this.clickDrag,this.clickSize);
+	});
+
+	canvas6.addEventListener("mousemove",function(e){
+		if(paint6){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context6,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas6.addEventListener("mouseup",function(e){
+		paint6 = false;
+	});
+
+	canvas6.addEventListener("mouseleave",function(e){
+		paint6 = false;
+	});
+
+	var canvas7 = document.getElementById("canvas7");
+	var context7 = canvas7.getContext("2d");
+	var outlineImage7 = new Image();
+	outlineImage7.src = a[6][4];
+	context7.drawImage(outlineImage7, 0, 0, 224, 224);
+
+	canvas7.clickX = new Array();
+	canvas7.clickY = new Array();
+	canvas7.clickDrag = new Array();
+	canvas7.clickSize = new Array();
+	canvas7.curSize = "normal";
+	var paint7;
+
+	canvas7.addEventListener("mousedown",function(e){
+		paint7 = true;
+		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+		redraw(this.clickX, this.clickY, context7, this.clickDrag,this.clickSize);
+	});
+
+	canvas7.addEventListener("mousemove",function(e){
+		if(paint7){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context7,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas7.addEventListener("mouseup",function(e){
+		paint7 = false;
+	});
+
+	canvas7.addEventListener("mouseleave",function(e){
+		paint7 = false;
+	});
+
+	var canvas8 = document.getElementById("canvas8");
+	var context8 = canvas8.getContext("2d");
+	var outlineImage8 = new Image();
+	outlineImage8.src = a[7][4];
+	context8.drawImage(outlineImage8, 0, 0, 224, 224);
+
+	canvas8.clickX = new Array();
+	canvas8.clickY = new Array();
+	canvas8.clickDrag = new Array();
+	canvas8.clickSize = new Array();
+	canvas8.curSize = "normal";
+	var paint8;
+
+	canvas8.addEventListener("mousedown",function(e){
+		paint8 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context8, this.clickDrag,this.clickSize);
+	});
+
+	canvas8.addEventListener("mousemove",function(e){
+		if(paint8){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context8,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas8.addEventListener("mouseup",function(e){
+		paint8 = false;
+	});
+
+	var canvas9 = document.getElementById("canvas9");
+	var context9 = canvas9.getContext("2d");
+	var outlineImage9 = new Image();
+	outlineImage9.src = a[8][4];
+	context9.drawImage(outlineImage9, 0, 0, 224, 224);
+
+	canvas9.clickX = new Array();
+	canvas9.clickY = new Array();
+	canvas9.clickDrag = new Array();
+	canvas9.clickSize = new Array();
+	canvas9.curSize = "normal";
+	var paint9;
+
+	canvas9.addEventListener("mousedown",function(e){
+		paint9 = true;
+		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+		redraw(this.clickX, this.clickY, context9, this.clickDrag,this.clickSize);
+	});
+
+	canvas9.addEventListener("mousemove",function(e){
+		if(paint9){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context9,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas9.addEventListener("mouseup",function(e){
+		paint9 = false;
+	});
+
+	canvas9.addEventListener("mouseleave",function(e){
+		paint9 = false;
+	});
+
+	var canvas10 = document.getElementById("canvas10");
+	var context10 = canvas10.getContext("2d");
+	var outlineImage10 = new Image();
+	outlineImage10.src = a[9][4];
+	context10.drawImage(outlineImage10, 0, 0, 224, 224);
+
+	canvas10.clickX = new Array();
+	canvas10.clickY = new Array();
+	canvas10.clickDrag = new Array();
+	canvas10.clickSize = new Array();
+	canvas10.curSize = "normal";
+	var paint10;
+
+	canvas10.addEventListener("mousedown",function(e){
+		paint10 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context10, this.clickDrag,this.clickSize);
+	});
+
+	canvas10.addEventListener("mousemove",function(e){
+		if(paint10){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context10,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas10.addEventListener("mouseup",function(e){
+		paint10 = false;
+	});
+
+	canvas10.addEventListener("mouseleave",function(e){
+		paint10 = false;
+	});
+
+	var canvas11 = document.getElementById("canvas11");
+	var context11 = canvas11.getContext("2d");
+	var outlineImage11 = new Image();
+	outlineImage11.src = a[10][4];
+	context11.drawImage(outlineImage11, 0, 0, 224, 224);
+
+	canvas11.clickX = new Array();
+	canvas11.clickY = new Array();
+	canvas11.clickDrag = new Array();
+	canvas11.clickSize = new Array();
+	canvas11.curSize = "normal";
+	var paint11;
+
+	canvas11.addEventListener("mousedown",function(e){
+		paint11 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context11, this.clickDrag,this.clickSize);
+	});
+
+	canvas11.addEventListener("mousemove",function(e){
+		if(paint11){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context11,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas11.addEventListener("mouseup",function(e){
+		paint11 = false;
+	});
+
+	canvas11.addEventListener("mouseleave",function(e){
+		paint11 = false;
+	});
+
+	var canvas12 = document.getElementById("canvas12");
+	var context12 = canvas12.getContext("2d");
+	var outlineImage12 = new Image();
+	outlineImage12.src = a[11][4];
+	context12.drawImage(outlineImage12, 0, 0, 224, 224);
+
+	canvas12.clickX = new Array();
+	canvas12.clickY = new Array();
+	canvas12.clickDrag = new Array();
+	canvas12.clickSize = new Array();
+	canvas12.curSize = "normal";
+	var paint12;
+
+	canvas12.addEventListener("mousedown",function(e){
+		paint12 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context12, this.clickDrag,this.clickSize);
+	});
+
+	canvas12.addEventListener("mousemove",function(e){
+		if(paint12){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context12,this.clickDrag,this.clickSize);
+		}
+	});
+
+	canvas12.addEventListener("mouseup",function(e){
+		paint12 = false;
+	});
+
+	canvas12.addEventListener("mouseleave",function(e){
+		paint12 = false;
+	});
+
+	var canvas13 = document.getElementById("canvas13");
+	var context13 = canvas13.getContext("2d");
+	var outlineImage13 = new Image();
+	outlineImage13.src = a[12][4];
+	context13.drawImage(outlineImage13, 0, 0, 224, 224);
+
+	canvas13.clickX = new Array();
+	canvas13.clickY = new Array();
+	canvas13.clickDrag = new Array();
+	canvas13.clickSize = new Array();
+	canvas13.curSize = "normal";
+	var paint13;
+
+	canvas13.addEventListener("mousedown",function(e){
+		paint13 = true;
+	 	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	 	redraw(this.clickX, this.clickY, context13, this.clickDrag,this.clickSize);
+	});
+
+	canvas13.addEventListener("mousemove",function(e){
+		if(paint13){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context13,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas13.addEventListener("mouseup",function(e){
+		paint13 = false;
+	});
+
+	canvas13.addEventListener("mouseleave",function(e){
+		paint13 = false;
+	});
+
+	var canvas14 = document.getElementById("canvas14");
+	var context14 = canvas14.getContext("2d");
+	var outlineImage14 = new Image();
+	outlineImage14.src = a[13][4];
+	context14.drawImage(outlineImage14, 0, 0, 224, 224);
+
+	canvas14.clickX = new Array();
+	canvas14.clickY = new Array();
+	canvas14.clickDrag = new Array();
+	canvas14.clickSize = new Array();
+	canvas14.curSize = "normal";
+	var paint14;
+
+	canvas14.addEventListener("mousedown",function(e){
+		paint14 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context14, this.clickDrag,this.clickSize);
+	});
+
+	canvas14.addEventListener("mousemove",function(e){
+		if(paint14){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context14,this.clickDrag,this.clickSize);
+	 	}
+	});
+
+	canvas14.addEventListener("mouseup",function(e){
+		paint14 = false;
+	});
+
+	canvas14.addEventListener("mouseleave",function(e){
+		paint14 = false;
+	});
+
+	var canvas15 = document.getElementById("canvas15");
+	var context15 = canvas15.getContext("2d");
+	var outlineImage15 = new Image();
+	outlineImage15.src = a[14][4];
+	context15.drawImage(outlineImage15, 0, 0, 224, 224);
+
+	canvas15.clickX = new Array();
+	canvas15.clickY = new Array();
+	canvas15.clickDrag = new Array();
+	canvas15.clickSize = new Array();
+	canvas15.curSize = "normal";
+	var paint15;
+
+	canvas15.addEventListener("mousedown",function(e){
+		paint15 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context15, this.clickDrag,this.clickSize);
+	});
+
+	canvas15.addEventListener("mousemove",function(e){
+		if(paint15){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context15,this.clickDrag,this.clickSize);
+		}
+	});
+
+	canvas15.addEventListener("mouseup",function(e){
+		paint15 = false;
+	});
+
+	canvas15.addEventListener("mouseleave",function(e){
+		paint15 = false;
+	});
+
+	var canvas16 = document.getElementById("canvas16");
+	var context16 = canvas16.getContext("2d");
+	var outlineImage16 = new Image();
+	outlineImage16.src = a[15][4];
+	context16.drawImage(outlineImage16, 0, 0, 224, 224);
+
+	canvas16.clickX = new Array();
+	canvas16.clickY = new Array();
+	canvas16.clickDrag = new Array();
+	canvas16.clickSize = new Array();
+	canvas16.curSize = "normal";
+	var paint16;
+
+	canvas16.addEventListener("mousedown",function(e){
+		paint16 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context16, this.clickDrag,this.clickSize);
+	});
+
+	canvas16.addEventListener("mousemove",function(e){
+		if(paint16){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context16,this.clickDrag,this.clickSize);
+	 	}
+	});
+
+	canvas16.addEventListener("mouseup",function(e){
+		paint16 = false;
+	});
+
+	canvas16.addEventListener("mouseleave",function(e){
+		paint16 = false;
+	});
+
+	var canvas17 = document.getElementById("canvas17");
+	var context17 = canvas17.getContext("2d");
+	var outlineImage17 = new Image();
+	outlineImage17.src = a[16][4];
+	context17.drawImage(outlineImage17, 0, 0, 224, 224);
+
+	canvas17.clickX = new Array();
+	canvas17.clickY = new Array();
+	canvas17.clickDrag = new Array();
+	canvas17.clickSize = new Array();
+	canvas17.curSize = "normal";
+	var paint17;
+
+	canvas17.addEventListener("mousedown",function(e){
+		paint17 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context17, this.clickDrag,this.clickSize);
+	});
+
+	canvas17.addEventListener("mousemove",function(e){
+		if(paint17){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context17,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas17.addEventListener("mouseup",function(e){
+		paint17 = false;
+	});
+
+	canvas17.addEventListener("mouseleave",function(e){
+		paint17 = false;
+	});
+
+	var canvas18 = document.getElementById("canvas18");
+	var context18 = canvas18.getContext("2d");
+	var outlineImage18 = new Image();
+	outlineImage18.src = a[17][4];
+	context18.drawImage(outlineImage18, 0, 0, 224, 224);
+
+	canvas18.clickX = new Array();
+	canvas18.clickY = new Array();
+	canvas18.clickDrag = new Array();
+	canvas18.clickSize = new Array();
+	canvas18.curSize = "normal";
+	var paint18;
+
+	canvas18.addEventListener("mousedown",function(e){
+		paint18 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context18, this.clickDrag,this.clickSize);
+	});
+
+	canvas18.addEventListener("mousemove",function(e){
+		if(paint18){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context18,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas18.addEventListener("mouseup",function(e){
+		paint18 = false;
+	});
+
+	canvas18.addEventListener("mouseleave",function(e){
+		paint18 = false;
+	});
+
+	var canvas19 = document.getElementById("canvas19");
+	var context19 = canvas19.getContext("2d");
+	var outlineImage19 = new Image();
+	outlineImage19.src = a[18][4];
+	context19.drawImage(outlineImage19, 0, 0, 224, 224);
+
+	canvas19.clickX = new Array();
+	canvas19.clickY = new Array();
+	canvas19.clickDrag = new Array();
+	canvas19.clickSize = new Array();
+	canvas19.curSize = "normal";
+	var paint19;
+
+	canvas19.addEventListener("mousedown",function(e){
+		paint19 = true;
+	  	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context19, this.clickDrag,this.clickSize);
+	});
+
+	canvas19.addEventListener("mousemove",function(e){
+		if(paint19){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context19,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas19.addEventListener("mouseup",function(e){
+		paint19 = false;
+	});
+
+	canvas19.addEventListener("mouseleave",function(e){
+		paint19 = false;
+	});
+
+	var canvas20 = document.getElementById("canvas20");
+	var context20 = canvas20.getContext("2d");
+	var outlineImage20 = new Image();
+	outlineImage20.src = a[19][4];
+	context20.drawImage(outlineImage20, 0, 0, 224, 224);
+
+	canvas20.clickX = new Array();
+	canvas20.clickY = new Array();
+	canvas20.clickDrag = new Array();
+	canvas20.clickSize = new Array();
+	canvas20.curSize = "normal";
+	var paint20;
+
+	canvas20.addEventListener("mousedown",function(e){
+		paint20 = true;
+	 	addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  	redraw(this.clickX, this.clickY, context20, this.clickDrag,this.clickSize);
+	});
+
+	canvas20.addEventListener("mousemove",function(e){
+		if(paint20){
+	  		addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true, this.clickX, this.clickY,this.clickDrag,this.clickSize,this.curSize);
+	  		redraw(this.clickX, this.clickY, context20,this.clickDrag,this.clickSize);
+	  	}
+	});
+
+	canvas20.addEventListener("mouseup",function(e){
+		paint20 = false;
+	});
+
+	canvas20.addEventListener("mouseleave",function(e){
+		paint20 = false;
+	});
+
+	/* function to add information to given canvas' arrays of click information */
+	function addClick(x, y, dragging, clickX, clickY,clickDrag,clickSize,curSize) {
+		clickX.push(x);
+	  	clickY.push(y);
+	  	clickDrag.push(dragging);
+	  	clickSize.push(curSize);
+	}
+
+	/* function to redraw lines drawn on given canvas so far */
+	function redraw(clickX, clickY,context,clickDrag,clickSize) {
+	 	context.lineJoin = "round";
+	 	context.strokeStyle = "#FF0000";
+		
+	  	var radius;
+	  	for(var i=0; i < clickX.length; i++) {	
+			if(clickSize[i] == "small"){
+				radius = 5;
+			} else if(clickSize[i] == "normal"){
+				radius = 10;
+			} else if(clickSize[i] == "large"){
+				radius = 20;
+			} else if(clickSize[i] == "huge"){
+				radius = 40;
+			} else{
+				alert("Error: Radius is zero for click " + i);
+				radius = 0;	
+			}
+
+		    context.beginPath();
+		    if(clickDrag[i] && i){
+		    	context.moveTo(clickX[i-1], clickY[i-1]);
+		    } else{
+		    	context.moveTo(clickX[i]-1, clickY[i]);
+		    }
+		    context.lineTo(clickX[i], clickY[i]);
+		    context.closePath();
+		    context.lineWidth = radius;
+		    context.stroke();
+	  	}
+	}
 });
 
+
+/* function to clear drawing from given canvas */
 function clearCanvas(i)
 {
 	var canvas = document.getElementById("canvas"+i.toString());
@@ -795,77 +803,85 @@ function clearCanvas(i)
 	outlineImage.src = a[i-1][4];
 	context.drawImage(outlineImage, 0, 0, 224, 224);
 
-    canvas.clickX = new Array();
-    canvas.clickY = new Array();
-    canvas.clickDrag = new Array();
-    canvas.clickSize = new Array();
-    canvas.curSize = "normal";
+	canvas.clickX = new Array();
+	canvas.clickY = new Array();
+	canvas.clickDrag = new Array();
+	canvas.clickSize = new Array();
+	canvas.curSize = "normal";
 }
 
+/* function to set drawing size of canvas to small, normal, large, or huge */
 function drawSize(i,s) {
 	var canvas = document.getElementById("canvas"+i.toString());
 	canvas.curSize = s;
 }
 
+/* function to make canvas for given question appear */
 function myFunction(i) {
-var elements = document.getElementsByClassName('canvasDiv');
-var requiredElement = elements[0];
-requiredElement.classList.remove("canvasDiv");
-requiredElement.classList.add("showd");
+	var elements = document.getElementsByClassName('canvasDiv');
+	var requiredElement = elements[0];
+	requiredElement.classList.remove("canvasDiv");
+	requiredElement.classList.add("showd");
 
-clearCanvas(i+1);
+	clearCanvas(i+1); /* ensures image appears, without this a bug occurs so that the image does not appear */
 }
 
+/* function to make given confidence slider appear */
 function myFunction0(i) {
-var requiredElement = document.getElementById('slider'+i.toString());
-requiredElement.classList.remove("hideddd");
-requiredElement.classList.add("showeddd");
+	var requiredElement = document.getElementById('slider'+i.toString());
+	requiredElement.classList.remove("hideddd");
+	requiredElement.classList.add("showeddd");
 }
 
+/* function to make given next element of survey appear */
 function myFunction2(i) {
-var elements = document.getElementsByClassName('hided');
-var requiredElement = elements[i];
-requiredElement.classList.remove("hided");
-requiredElement.classList.add("showed");
+	var elements = document.getElementsByClassName('hided');
+	var requiredElement = elements[i];
+	requiredElement.classList.remove("hided");
+	requiredElement.classList.add("showed");
 
-var current = document.getElementsByClassName('showed');
-var requiredCurrent = current[0];
-requiredCurrent.classList.remove("showed");
-requiredCurrent.classList.add("hided");
+	var current = document.getElementsByClassName('showed');
+	var requiredCurrent = current[0];
+	requiredCurrent.classList.remove("showed");
+	requiredCurrent.classList.add("hided");
 }
 
+/* function to make first element of survey disappear and second element of survey appear */
 function myFunction3() {
-var element = document.getElementsByClassName('bye');
-var requiredElement = element[0];
-requiredElement.classList.remove("bye");
-requiredElement.classList.add("showed");
+	var element = document.getElementsByClassName('bye');
+	var requiredElement = element[0];
+	requiredElement.classList.remove("bye");
+	requiredElement.classList.add("showed");
 
-var current = document.getElementsByClassName('hi');
-var requiredCurrent = current[0];
-requiredCurrent.classList.remove("hi");
-requiredCurrent.classList.add("bye");
+	var current = document.getElementsByClassName('hi');
+	var requiredCurrent = current[0];
+	requiredCurrent.classList.remove("hi");
+	requiredCurrent.classList.add("bye");
 }
 
+/* function to make confidence slider's input number shown update in real time. function also makes follow-up "Continue" button appear. */
 function updateTextInput(val,n) {
-document.getElementById('textInput'+ n.toString()).value=val;
+	document.getElementById('textInput'+ n.toString()).value=val;
 
-var requiredElement = document.getElementById('hidedd'+n.toString());
-requiredElement.classList.remove("hidedd");
-requiredElement.classList.add("showedd");
+	var requiredElement = document.getElementById('hidedd'+n.toString());
+	requiredElement.classList.remove("hidedd");
+	requiredElement.classList.add("showedd");
 }
 
+/* function to make given "Continue" button element appear */
 function myFunction1() {
-var elements = document.getElementsByClassName('hidedd');
-var requiredElement = elements[0];
-requiredElement.classList.remove("hidedd");
-requiredElement.classList.add("showedd");
+	var elements = document.getElementsByClassName('hidedd');
+	var requiredElement = elements[0];
+	requiredElement.classList.remove("hidedd");
+	requiredElement.classList.add("showedd");
 }
 
+/* function to make first "Continue" button appear */
 function begin() {
-var elements = document.getElementsByClassName('bye2');
-var requiredElement = elements[0];
-requiredElement.classList.remove("bye2");
-requiredElement.classList.add("hi2");
+	var elements = document.getElementsByClassName('bye2');
+	var requiredElement = elements[0];
+	requiredElement.classList.remove("bye2");
+	requiredElement.classList.add("hi2");
 }
 </script>
 </head>
@@ -884,6 +900,7 @@ requiredElement.classList.add("hi2");
 </ul>
 </div>
 
+<!-- Preliminary Questions -->
 <p>Please answer the following question before beginning the classification task.</p>
 
 <p>What level of knowledge do you have about different bird species?</p>
@@ -900,16 +917,17 @@ requiredElement.classList.add("hi2");
 <button type="button" class="bye2" onclick="myFunction3()">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 1 -->
 <fieldset class="bye">
 <p>Please categorize the image below.</p>
 <img id="i1" src="">
-<div class="radio"><input name="Q1Answer" type="radio" value="wait1" id="in1" onclick="myFunction(0)"/><label for="in1" id="op1">wait1</label></div>
+<div class="radio"><input name="Q1Answer" type="radio" value="" id="in1" onclick="myFunction(0)"/><label for="in1" id="op1"></label></div>
 
-<div class="radio"><input name="Q1Answer" type="radio" value="wait2" id="in2" onclick="myFunction(0)"/><label for="in2" id="op2">wait2</label></div>
+<div class="radio"><input name="Q1Answer" type="radio" value="" id="in2" onclick="myFunction(0)"/><label for="in2" id="op2"></label></div>
 
-<div class="radio"><input name="Q1Answer" type="radio" value="wait3" id="in3" onclick="myFunction(0)"/><label for="in3" id="op3">wait3</label></div>
+<div class="radio"><input name="Q1Answer" type="radio" value="" id="in3" onclick="myFunction(0)"/><label for="in3" id="op3"></label></div>
 
-<div class="radio"><input name="Q1Answer" type="radio" value="wait4" id="in4" onclick="myFunction(0)"/><label for="in4" id="op4">wait4</label></div>
+<div class="radio"><input name="Q1Answer" type="radio" value="" id="in4" onclick="myFunction(0)"/><label for="in4" id="op4"></label></div>
 
 <div class="canvasDiv">
 	<p>Please highlight the part of the image that led you to make your choice.</p>
@@ -924,47 +942,50 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider1" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,0);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,0);">
 <input type="text" style="width: 18px" id="textInput0" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd0" class="hidedd" onclick="myFunction2(0)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 1 -->
 <fieldset class="hided">
 <p id="r1"></p>
 <img id="i2" src="">
-<div class="radio"><input name="Q2Answer" type="radio" value="wait5" id="in5" onclick="myFunction0(2)"/><label for="in5" id="op5">wait5</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="" id="in5" onclick="myFunction0(2)"/><label for="in5" id="op5"></label></div>
 
-<div class="radio"><input name="Q2Answer" type="radio" value="wait6" id="in6" onclick="myFunction0(2)"/><label for="in6" id="op6">wait6</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="" id="in6" onclick="myFunction0(2)"/><label for="in6" id="op6"></label></div>
 
-<div class="radio"><input name="Q2Answer" type="radio" value="wait7" id="in7" onclick="myFunction0(2)"/><label for="in7" id="op7">wait7</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="" id="in7" onclick="myFunction0(2)"/><label for="in7" id="op7"></label></div>
 
-<div class="radio"><input name="Q2Answer" type="radio" value="wait8" id="in8" onclick="myFunction0(2)"/><label for="in8" id="op8">wait8</label></div>
+<div class="radio"><input name="Q2Answer" type="radio" value="" id="in8" onclick="myFunction0(2)"/><label for="in8" id="op8"></label></div>
 
 <div id="slider2" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,1);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,1);">
 <input type="text" style="width: 18px" id="textInput1" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd1" class="hidedd" onclick="myFunction2(1)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 1 -->
 <fieldset class="hided">
 <p id="f1"></p>
 <button type="button" onclick="myFunction2(2)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 2 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i3" src="">
-<div class="radio"><input name="Q3Answer" type="radio" value="wait9" id="in9" onclick="myFunction(1)"/><label for="in9" id="op9">wait9</label></div>
+<div class="radio"><input name="Q3Answer" type="radio" value="" id="in9" onclick="myFunction(1)"/><label for="in9" id="op9"></label></div>
 
-<div class="radio"><input name="Q3Answer" type="radio" value="wait10" id="in10" onclick="myFunction(1)"/><label for="in10" id="op10">wait10</label></div>
+<div class="radio"><input name="Q3Answer" type="radio" value="" id="in10" onclick="myFunction(1)"/><label for="in10" id="op10"></label></div>
 
-<div class="radio"><input name="Q3Answer" type="radio" value="wait11" id="in11" onclick="myFunction(1)"/><label for="in11" id="op11">wait11</label></div>
+<div class="radio"><input name="Q3Answer" type="radio" value="" id="in11" onclick="myFunction(1)"/><label for="in11" id="op11"></label></div>
 
-<div class="radio"><input name="Q3Answer" type="radio" value="wait12" id="in12" onclick="myFunction(1)"/><label for="in12" id="op12">wait12</label></div>
+<div class="radio"><input name="Q3Answer" type="radio" value="" id="in12" onclick="myFunction(1)"/><label for="in12" id="op12"></label></div>
 
 <div class="canvasDiv">
 	<p>Please highlight the part of the image that led you to make your choice.</p>
@@ -979,47 +1000,50 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider3" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,2);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,2);">
 <input type="text" style="width: 18px" id="textInput2" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd2" class="hidedd" onclick="myFunction2(3)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 2 -->
 <fieldset class="hided">
 <p id="r2"></p>
 <img id="i4" src="">
-<div class="radio"><input name="Q4Answer" type="radio" value="wait13" id="in13" onclick="myFunction0(4)"/><label for="in13" id="op13">wait13</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="" id="in13" onclick="myFunction0(4)"/><label for="in13" id="op13"></label></div>
 
-<div class="radio"><input name="Q4Answer" type="radio" value="wait14" id="in14" onclick="myFunction0(4)"/><label for="in14" id="op14">wait14</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="" id="in14" onclick="myFunction0(4)"/><label for="in14" id="op14"></label></div>
 
-<div class="radio"><input name="Q4Answer" type="radio" value="wait15" id="in15" onclick="myFunction0(4)"/><label for="in15" id="op15">wait15</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="" id="in15" onclick="myFunction0(4)"/><label for="in15" id="op15"></label></div>
 
-<div class="radio"><input name="Q4Answer" type="radio" value="wait16" id="in16" onclick="myFunction0(4)"/><label for="in16" id="op16">wait16</label></div>
+<div class="radio"><input name="Q4Answer" type="radio" value="" id="in16" onclick="myFunction0(4)"/><label for="in16" id="op16"></label></div>
 
 <div id="slider4" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,3);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,3);">
 <input type="text" style="width: 18px" id="textInput3" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd3" class="hidedd" onclick="myFunction2(4)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 2 -->
 <fieldset class="hided">
 <p id="f2"></p>
 <button type="button" onclick="myFunction2(5)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 3 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i5" src="">
-<div class="radio"><input name="Q5Answer" type="radio" value="wait17" id="in17" onclick="myFunction(2)"/><label for="in17" id="op17">wait17</label></div>
+<div class="radio"><input name="Q5Answer" type="radio" value="" id="in17" onclick="myFunction(2)"/><label for="in17" id="op17"></label></div>
 
-<div class="radio"><input name="Q5Answer" type="radio" value="wait18" id="in18" onclick="myFunction(2)"/><label for="in18" id="op18">wait18</label></div>
+<div class="radio"><input name="Q5Answer" type="radio" value="" id="in18" onclick="myFunction(2)"/><label for="in18" id="op18"></label></div>
 
-<div class="radio"><input name="Q5Answer" type="radio" value="wait19" id="in19" onclick="myFunction(2)"/><label for="in19" id="op19">wait19</label></div>
+<div class="radio"><input name="Q5Answer" type="radio" value="" id="in19" onclick="myFunction(2)"/><label for="in19" id="op19"></label></div>
 
-<div class="radio"><input name="Q5Answer" type="radio" value="wait20" id="in20" onclick="myFunction(2)"/><label for="in20" id="op20">wait20</label></div>
+<div class="radio"><input name="Q5Answer" type="radio" value="" id="in20" onclick="myFunction(2)"/><label for="in20" id="op20"></label></div>
 
 <div class="canvasDiv">
 	<p>Please highlight the part of the image that led you to make your choice.</p>
@@ -1034,47 +1058,50 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider5" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,4);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,4);">
 <input type="text" style="width: 18px" id="textInput4" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd4" class="hidedd" onclick="myFunction2(6)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 3 -->
 <fieldset class="hided">
 <p id="r3"></p>
 <img id="i6" src="">
-<div class="radio"><input name="Q6Answer" type="radio" value="wait21" id="in21" onclick="myFunction0(6)"/><label for="in21" id="op21">wait21</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="" id="in21" onclick="myFunction0(6)"/><label for="in21" id="op21"></label></div>
 
-<div class="radio"><input name="Q6Answer" type="radio" value="wait22" id="in22" onclick="myFunction0(6)"/><label for="in22" id="op22">wait22</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="" id="in22" onclick="myFunction0(6)"/><label for="in22" id="op22"></label></div>
 
-<div class="radio"><input name="Q6Answer" type="radio" value="wait23" id="in23" onclick="myFunction0(6)"/><label for="in23" id="op23">wait23</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="" id="in23" onclick="myFunction0(6)"/><label for="in23" id="op23"></label></div>
 
-<div class="radio"><input name="Q6Answer" type="radio" value="wait24" id="in24" onclick="myFunction0(6)"/><label for="in24" id="op24">wait24</label></div>
+<div class="radio"><input name="Q6Answer" type="radio" value="" id="in24" onclick="myFunction0(6)"/><label for="in24" id="op24"></label></div>
 
 <div id="slider6" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,5);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,5);">
 <input type="text" style="width: 18px" id="textInput5" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd5" class="hidedd" onclick="myFunction2(7)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 3 -->
 <fieldset class="hided">
 <p id="f3"></p>
 <button type="button" onclick="myFunction2(8)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 4 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i7" src="">
-<div class="radio"><input name="Q7Answer" type="radio" value="wait25" id="in25" onclick="myFunction(3)"/><label for="in25" id="op25">wait25</label></div>
+<div class="radio"><input name="Q7Answer" type="radio" value="" id="in25" onclick="myFunction(3)"/><label for="in25" id="op25"></label></div>
 
-<div class="radio"><input name="Q7Answer" type="radio" value="wait26" id="in26" onclick="myFunction(3)"/><label for="in26" id="op26">wait26</label></div>
+<div class="radio"><input name="Q7Answer" type="radio" value="" id="in26" onclick="myFunction(3)"/><label for="in26" id="op26"></label></div>
 
-<div class="radio"><input name="Q7Answer" type="radio" value="wait27" id="in27" onclick="myFunction(3)"/><label for="in27" id="op27">wait27</label></div>
+<div class="radio"><input name="Q7Answer" type="radio" value="" id="in27" onclick="myFunction(3)"/><label for="in27" id="op27"></label></div>
 
-<div class="radio"><input name="Q7Answer" type="radio" value="wait28" id="in28" onclick="myFunction(3)"/><label for="in28" id="op28">wait28</label></div>
+<div class="radio"><input name="Q7Answer" type="radio" value="" id="in28" onclick="myFunction(3)"/><label for="in28" id="op28"></label></div>
 
 <div class="canvasDiv">
 	<p>Please highlight the part of the image that led you to make your choice.</p>
@@ -1089,37 +1116,40 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider7" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,6);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,6);">
 <input type="text" style="width: 18px" id="textInput6" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd6" class="hidedd" onclick="myFunction2(9)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 4 -->
 <fieldset class="hided">
 <p id="r4"></p>
 <img id="i8" src="">
-<div class="radio"><input name="Q8Answer" type="radio" value="wait29" id="in29" onclick="myFunction0(8)"/><label for="in29" id="op29">wait29</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="" id="in29" onclick="myFunction0(8)"/><label for="in29" id="op29"></label></div>
 
-<div class="radio"><input name="Q8Answer" type="radio" value="wait30" id="in30" onclick="myFunction0(8)"/><label for="in30" id="op30">wait30</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="" id="in30" onclick="myFunction0(8)"/><label for="in30" id="op30"></label></div>
 
-<div class="radio"><input name="Q8Answer" type="radio" value="wait31" id="in31" onclick="myFunction0(8)"/><label for="in31" id="op31">wait31</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="" id="in31" onclick="myFunction0(8)"/><label for="in31" id="op31"></label></div>
 
-<div class="radio"><input name="Q8Answer" type="radio" value="wait32" id="in32" onclick="myFunction0(8)"/><label for="in32" id="op32">wait32</label></div>
+<div class="radio"><input name="Q8Answer" type="radio" value="" id="in32" onclick="myFunction0(8)"/><label for="in32" id="op32"></label></div>
 
 <div id="slider8" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,7);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,7);">
 <input type="text" style="width: 18px" id="textInput7" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd7" class="hidedd" onclick="myFunction2(10)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 4 -->
 <fieldset class="hided">
 <p id="f4"></p>
 <button type="button" onclick="myFunction2(11)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 5 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i9" src="">
@@ -1144,13 +1174,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider9" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,8);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,8);">
 <input type="text" style="width: 18px" id="textInput8" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd8" class="hidedd" onclick="myFunction2(12)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 5 -->
 <fieldset class="hided">
 <p id="r5"></p>
 <img id="i10" src="">
@@ -1163,18 +1194,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q10Answer" type="radio" value="" id="in40" onclick="myFunction0(10)"/><label for="in40" id="op40"></label></div>
 
 <div id="slider10" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,9);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,9);">
 <input type="text" style="width: 18px" id="textInput9" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd9" class="hidedd" onclick="myFunction2(13)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 5 -->
 <fieldset class="hided">
 <p id="f5"></p>
 <button type="button" onclick="myFunction2(14)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 6 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i11" src="">
@@ -1199,13 +1232,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider11" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,10);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,10);">
 <input type="text" style="width: 18px" id="textInput10" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd10" class="hidedd" onclick="myFunction2(15)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 6 -->
 <fieldset class="hided">
 <p id="r6"></p>
 <img id="i12" src="">
@@ -1218,18 +1252,21 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q12Answer" type="radio" value="" id="in48" onclick="myFunction0(12)"/><label for="in48" id="op48"></label></div>
 
 <div id="slider12" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,11);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,11);">
 <input type="text" style="width: 18px" id="textInput11" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd11" class="hidedd" onclick="myFunction2(16)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 6 -->
 <fieldset class="hided">
 <p id="f6"></p>
 <button type="button" onclick="myFunction2(17)">Continue</button>
 </fieldset>
 
+
+<!-- Original Image Question 7 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i13" src="">
@@ -1254,13 +1291,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider13" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,12);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,12);">
 <input type="text" style="width: 18px" id="textInput12" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd12" class="hidedd" onclick="myFunction2(18)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 7 -->
 <fieldset class="hided">
 <p id="r7"></p>
 <img id="i14" src="">
@@ -1273,18 +1311,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q14Answer" type="radio" value="" id="in56" onclick="myFunction0(14)"/><label for="in56" id="op56"></label></div>
 
 <div id="slider14" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,13);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,13);">
 <input type="text" style="width: 18px" id="textInput13" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd13" class="hidedd" onclick="myFunction2(19)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 7 -->
 <fieldset class="hided">
 <p id="f7"></p>
 <button type="button" onclick="myFunction2(20)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 8 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i15" src="">
@@ -1309,13 +1349,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider15" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,14);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,14);">
 <input type="text" style="width: 18px" id="textInput14" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd14" class="hidedd" onclick="myFunction2(21)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 8 -->
 <fieldset class="hided">
 <p id="r8"></p>
 <img id="i16" src="">
@@ -1328,18 +1369,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q16Answer" type="radio" value="" id="in64" onclick="myFunction0(16)"/><label for="in64" id="op64"></label></div>
 
 <div id="slider16" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,15);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,15);">
 <input type="text" style="width: 18px" id="textInput15" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd15" class="hidedd" onclick="myFunction2(22)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 8 -->
 <fieldset class="hided">
 <p id="f8"></p>
 <button type="button" onclick="myFunction2(23)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 9 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i17" src="">
@@ -1364,13 +1407,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider17" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,16);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,16);">
 <input type="text" style="width: 18px" id="textInput16" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd16" class="hidedd" onclick="myFunction2(24)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 9 -->
 <fieldset class="hided">
 <p id="r9"></p>
 <img id="i18" src="">
@@ -1383,18 +1427,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q18Answer" type="radio" value="" id="in72" onclick="myFunction0(18)"/><label for="in72" id="op72"></label></div>
 
 <div id="slider18" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,17);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,17);">
 <input type="text" style="width: 18px" id="textInput17" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd17" class="hidedd" onclick="myFunction2(25)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 9 -->
 <fieldset class="hided">
 <p id="f9"></p>
 <button type="button" onclick="myFunction2(26)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 10 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i19" src="">
@@ -1419,13 +1465,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider19" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,18);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,18);">
 <input type="text" style="width: 18px" id="textInput18" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd18" class="hidedd" onclick="myFunction2(27)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 10 -->
 <fieldset class="hided">
 <p id="r10"></p>
 <img id="i20" src="">
@@ -1438,18 +1485,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q20Answer" type="radio" value="" id="in80" onclick="myFunction0(20)"/><label for="in80" id="op80"></label></div>
 
 <div id="slider20" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,19);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,19);">
 <input type="text" style="width: 18px" id="textInput19" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd19" class="hidedd" onclick="myFunction2(28)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 10 -->
 <fieldset class="hided">
 <p id="f10"></p>
 <button type="button" onclick="myFunction2(29)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 11 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i21" src="">
@@ -1474,13 +1523,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider21" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,20);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,20);">
 <input type="text" style="width: 18px" id="textInput20" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd20" class="hidedd" onclick="myFunction2(30)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 11 -->
 <fieldset class="hided">
 <p id="r11"></p>
 <img id="i22" src="">
@@ -1493,18 +1543,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q22Answer" type="radio" value="" id="in88" onclick="myFunction0(22)"/><label for="in88" id="op88"></label></div>
 
 <div id="slider22" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,21);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,21);">
 <input type="text" style="width: 18px" id="textInput21" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd21" class="hidedd" onclick="myFunction2(31)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 11 -->
 <fieldset class="hided">
 <p id="f11"></p>
 <button type="button" onclick="myFunction2(32)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 12 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i23" src="">
@@ -1529,13 +1581,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider23" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,22);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,22);">
 <input type="text" style="width: 18px" id="textInput22" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd22" class="hidedd" onclick="myFunction2(33)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 12 -->
 <fieldset class="hided">
 <p id="r12"></p>
 <img id="i24" src="">
@@ -1548,18 +1601,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q24Answer" type="radio" value="" id="in96" onclick="myFunction0(24)"/><label for="in96" id="op96"></label></div>
 
 <div id="slider24" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,23);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,23);">
 <input type="text" style="width: 18px" id="textInput23" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd23" class="hidedd" onclick="myFunction2(34)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 12 -->
 <fieldset class="hided">
 <p id="f12"></p>
 <button type="button" onclick="myFunction2(35)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 13 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i25" src="">
@@ -1584,13 +1639,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider25" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,24);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,24);">
 <input type="text" style="width: 18px" id="textInput24" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd24" class="hidedd" onclick="myFunction2(36)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 13 -->
 <fieldset class="hided">
 <p id="r13"></p>
 <img id="i26" src="">
@@ -1603,18 +1659,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q26Answer" type="radio" value="" id="in104" onclick="myFunction0(26)"/><label for="in104" id="op104"></label></div>
 
 <div id="slider26" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,25);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,25);">
 <input type="text" style="width: 18px" id="textInput25" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd25" class="hidedd" onclick="myFunction2(37)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 13 -->
 <fieldset class="hided">
 <p id="f13"></p>
 <button type="button" onclick="myFunction2(38)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 14 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i27" src="">
@@ -1639,13 +1697,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider27" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,26);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,26);">
 <input type="text" style="width: 18px" id="textInput26" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd26" class="hidedd" onclick="myFunction2(39)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 14 -->
 <fieldset class="hided">
 <p id="r14"></p>
 <img id="i28" src="">
@@ -1658,18 +1717,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q28Answer" type="radio" value="" id="in112" onclick="myFunction0(28)"/><label for="in112" id="op112"></label></div>
 
 <div id="slider28" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,27);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,27);">
 <input type="text" style="width: 18px" id="textInput27" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd27" class="hidedd" onclick="myFunction2(40)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 14 -->
 <fieldset class="hided">
 <p id="f14"></p>
 <button type="button" onclick="myFunction2(41)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 15 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i29" src="">
@@ -1694,13 +1755,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider29" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,28);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,28);">
 <input type="text" style="width: 18px" id="textInput28" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd28" class="hidedd" onclick="myFunction2(42)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 15 -->
 <fieldset class="hided">
 <p id="r15"></p>
 <img id="i30" src="">
@@ -1713,18 +1775,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q30Answer" type="radio" value="" id="in120" onclick="myFunction0(30)"/><label for="in120" id="op120"></label></div>
 
 <div id="slider30" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,29);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,29);">
 <input type="text" style="width: 18px" id="textInput29" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd29" class="hidedd" onclick="myFunction2(43)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 15 -->
 <fieldset class="hided">
 <p id="f15"></p>
 <button type="button" onclick="myFunction2(44)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 16 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i31" src="">
@@ -1749,13 +1813,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider31" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,30);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,30);">
 <input type="text" style="width: 18px" id="textInput30" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd30" class="hidedd" onclick="myFunction2(45)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 16 -->
 <fieldset class="hided">
 <p id="r16"></p>
 <img id="i32" src="">
@@ -1768,18 +1833,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q32Answer" type="radio" value="" id="in128" onclick="myFunction0(32)"/><label for="in128" id="op128"></label></div>
 
 <div id="slider32" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,31);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,31);">
 <input type="text" style="width: 18px" id="textInput31" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd31" class="hidedd" onclick="myFunction2(46)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 16 -->
 <fieldset class="hided">
 <p id="f16"></p>
 <button type="button" onclick="myFunction2(47)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 17 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i33" src="">
@@ -1804,13 +1871,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider33" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,32);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,32);">
 <input type="text" style="width: 18px" id="textInput32" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd32" class="hidedd" onclick="myFunction2(48)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 17 -->
 <fieldset class="hided">
 <p id="r17"></p>
 <img id="i34" src="">
@@ -1823,18 +1891,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q34Answer" type="radio" value="" id="in136" onclick="myFunction0(34)"/><label for="in136" id="op136"></label></div>
 
 <div id="slider34" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,33);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,33);">
 <input type="text" style="width: 18px" id="textInput33" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd33" class="hidedd" onclick="myFunction2(49)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 17 -->
 <fieldset class="hided">
 <p id="f17"></p>
 <button type="button" onclick="myFunction2(50)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 18 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i35" src="">
@@ -1859,13 +1929,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider35" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,34);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,34);">
 <input type="text" style="width: 18px" id="textInput34" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd34" class="hidedd" onclick="myFunction2(51)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 18 -->
 <fieldset class="hided">
 <p id="r18"></p>
 <img id="i36" src="">
@@ -1878,19 +1949,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q36Answer" type="radio" value="" id="in144" onclick="myFunction0(36)"/><label for="in144" id="op144"></label></div>
 
 <div id="slider36" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,35);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,35);">
 <input type="text" style="width: 18px" id="textInput35" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd35" class="hidedd" onclick="myFunction2(52)">Continue</button>
 </fieldset>
 
-
+<!-- Feedback for Question 18 -->
 <fieldset class="hided">
 <p id="f18"></p>
 <button type="button" onclick="myFunction2(53)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 19 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i37" src="">
@@ -1915,13 +1987,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider37" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,36);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,36);">
 <input type="text" style="width: 18px" id="textInput36" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd36" class="hidedd" onclick="myFunction2(54)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 19 -->
 <fieldset class="hided">
 <p id="r19"></p>
 <img id="i38" src="">
@@ -1934,19 +2007,20 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q38Answer" type="radio" value="" id="in152" onclick="myFunction0(38)"/><label for="in152" id="op152"></label></div>
 
 <div id="slider38" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,37);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,37);">
 <input type="text" style="width: 18px" id="textInput37" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd37" class="hidedd" onclick="myFunction2(55)">Continue</button>
 </fieldset>
 
-
+<!-- Feedback for Image Question 19 -->
 <fieldset class="hided">
 <p id="f19"></p>
 <button type="button" onclick="myFunction2(56)">Continue</button>
 </fieldset>
 
+<!-- Original Image Question 20 -->
 <fieldset class="hided">
 <p>Please categorize the image below.</p>
 <img id="i39" src="">
@@ -1971,13 +2045,14 @@ requiredElement.classList.add("hi2");
 </div>
 
 <div id="slider39" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,38);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,38);">
 <input type="text" style="width: 18px" id="textInput38" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd38" class="hidedd" onclick="myFunction2(57)">Continue</button>
 </fieldset>
 
+<!-- Visual Explanation Image Question 20 -->
 <fieldset class="hided">
 <p id="r20"></p>
 <img id="i40" src="">
@@ -1990,126 +2065,130 @@ requiredElement.classList.add("hi2");
 <div class="radio"><input name="Q40Answer" type="radio" value="" id="in160" onclick="myFunction0(40)"/><label for="in160" id="op160"></label></div>
 
 <div id="slider40" class="hideddd">
-<input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,39);">
+Confidence: <input type="range" name="rangeInput" min="0" max="100" oninput="updateTextInput(this.value,39);">
 <input type="text" style="width: 18px" id="textInput39" value="" disabled="disabled">
 </div>
 
 <button type="button" id="hidedd39" class="hidedd" onclick="myFunction2(58)">Continue</button>
 </fieldset>
 
+<!-- Feedback for Question 20 -->
 <fieldset class="hided">
 <p id="f20"></p>
 <button type="button" onclick="myFunction2(59)">Continue</button>
 </fieldset>
 
+<!-- Follow-Up Questions -->
 <fieldset class="hided">
-
+<p>Please answer a few follow-up questions starting with the one below.</p>
 <p>How much would you say the AI's confidence value contributed to your final decision for a classification when the classification was easy to you?</p>
-<div class="radio"><input name="Q41Answer" type="radio" value="" id="in161" onclick="myFunction1()"/><label for="in161" id="op161">a great deal</label></div>
+<div class="radio"><input name="Q41Answer" type="radio" value="a great deal" id="in161" onclick="myFunction1()"/><label for="in161" id="op161">a great deal</label></div>
 
-<div class="radio"><input name="Q41Answer" type="radio" value="" id="in162" onclick="myFunction1()"/><label for="in162" id="op162">a fair amount</label></div>
+<div class="radio"><input name="Q41Answer" type="radio" value="a fair amount" id="in162" onclick="myFunction1()"/><label for="in162" id="op162">a fair amount</label></div>
 
-<div class="radio"><input name="Q41Answer" type="radio" value="" id="in163" onclick="myFunction1()"/><label for="in163" id="op163">a little bit</label></div>
+<div class="radio"><input name="Q41Answer" type="radio" value="a little bit" id="in163" onclick="myFunction1()"/><label for="in163" id="op163">a little bit</label></div>
 
-<div class="radio"><input name="Q41Answer" type="radio" value="" id="in164" onclick="myFunction1()"/><label for="in164" id="op164">not at all</label></div>
+<div class="radio"><input name="Q41Answer" type="radio" value="not at all" id="in164" onclick="myFunction1()"/><label for="in164" id="op164">not at all</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(60)">Continue</button>
 </fieldset>
 
 <fieldset class="hided">
 <p>How much would you say the AI's confidence value contributed to your final decision for a classification when the classification was difficult to you?</p>
-<div class="radio"><input name="Q42Answer" type="radio" value="" id="in165" onclick="myFunction1()"/><label for="in165" id="op165">a great deal</label></div>
+<div class="radio"><input name="Q42Answer" type="radio" value="a great deal" id="in165" onclick="myFunction1()"/><label for="in165" id="op165">a great deal</label></div>
 
-<div class="radio"><input name="Q42Answer" type="radio" value="" id="in166" onclick="myFunction1()"/><label for="in166" id="op166">a fair amount</label></div>
+<div class="radio"><input name="Q42Answer" type="radio" value="a fair amount" id="in166" onclick="myFunction1()"/><label for="in166" id="op166">a fair amount</label></div>
 
-<div class="radio"><input name="Q42Answer" type="radio" value="" id="in167" onclick="myFunction1()"/><label for="in167" id="op167">a little bit</label></div>
+<div class="radio"><input name="Q42Answer" type="radio" value="a little bit" id="in167" onclick="myFunction1()"/><label for="in167" id="op167">a little bit</label></div>
 
-<div class="radio"><input name="Q42Answer" type="radio" value="" id="in168" onclick="myFunction1()"/><label for="in168" id="op168">not at all</label></div>
+<div class="radio"><input name="Q42Answer" type="radio" value="not at all" id="in168" onclick="myFunction1()"/><label for="in168" id="op168">not at all</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(61)">Continue</button>
 </fieldset>
 
 <fieldset class="hided">
 <p>How much would you say the AI's visual explanation contributed to your final decision for a classification when the classification was easy to you?</p>
-<div class="radio"><input name="Q43Answer" type="radio" value="" id="in169" onclick="myFunction1()"/><label for="in169" id="op169">a great deal</label></div>
+<div class="radio"><input name="Q43Answer" type="radio" value="a great deal" id="in169" onclick="myFunction1()"/><label for="in169" id="op169">a great deal</label></div>
 
-<div class="radio"><input name="Q43Answer" type="radio" value="" id="in170" onclick="myFunction1()"/><label for="in170" id="op170">a fair amount</label></div>
+<div class="radio"><input name="Q43Answer" type="radio" value="a fair amount" id="in170" onclick="myFunction1()"/><label for="in170" id="op170">a fair amount</label></div>
 
-<div class="radio"><input name="Q43Answer" type="radio" value="" id="in171" onclick="myFunction1()"/><label for="in171" id="op171">a little bit</label></div>
+<div class="radio"><input name="Q43Answer" type="radio" value="a little bit" id="in171" onclick="myFunction1()"/><label for="in171" id="op171">a little bit</label></div>
 
-<div class="radio"><input name="Q43Answer" type="radio" value="" id="in172" onclick="myFunction1()"/><label for="in172" id="op172">not at all</label></div>
+<div class="radio"><input name="Q43Answer" type="radio" value="not at all" id="in172" onclick="myFunction1()"/><label for="in172" id="op172">not at all</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(62)">Continue</button>
 </fieldset>
 
 <fieldset class="hided">
 <p>How much would you say the AI's visual explanation contributed to your final decision for a classification when the classification was difficult to you?</p>
-<div class="radio"><input name="Q44Answer" type="radio" value="" id="in173" onclick="myFunction1()"/><label for="in173" id="op173">a great deal</label></div>
+<div class="radio"><input name="Q44Answer" type="radio" value="a great deal" id="in173" onclick="myFunction1()"/><label for="in173" id="op173">a great deal</label></div>
 
-<div class="radio"><input name="Q44Answer" type="radio" value="" id="in174" onclick="myFunction1()"/><label for="in174" id="op174">a fair amount</label></div>
+<div class="radio"><input name="Q44Answer" type="radio" value="a fair amount" id="in174" onclick="myFunction1()"/><label for="in174" id="op174">a fair amount</label></div>
 
-<div class="radio"><input name="Q44Answer" type="radio" value="" id="in175" onclick="myFunction1()"/><label for="in175" id="op175">a little bit</label></div>
+<div class="radio"><input name="Q44Answer" type="radio" value="a little bit" id="in175" onclick="myFunction1()"/><label for="in175" id="op175">a little bit</label></div>
 
-<div class="radio"><input name="Q44Answer" type="radio" value="" id="in176" onclick="myFunction1()"/><label for="in176" id="op176">not at all</label></div>
+<div class="radio"><input name="Q44Answer" type="radio" value="not at all" id="in176" onclick="myFunction1()"/><label for="in176" id="op176">not at all</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(63)">Continue</button>
 </fieldset>
 
 <fieldset class="hided">
 <p>How much would you say the AI's answer alone contributed to your final decision for a classification when the classification was easy to you?</p>
-<div class="radio"><input name="Q45Answer" type="radio" value="" id="in177" onclick="myFunction1()"/><label for="in177" id="op177">a great deal</label></div>
+<div class="radio"><input name="Q45Answer" type="radio" value="a great deal" id="in177" onclick="myFunction1()"/><label for="in177" id="op177">a great deal</label></div>
 
-<div class="radio"><input name="Q45Answer" type="radio" value="" id="in178" onclick="myFunction1()"/><label for="in178" id="op178">a fair amount</label></div>
+<div class="radio"><input name="Q45Answer" type="radio" value="a fair amount" id="in178" onclick="myFunction1()"/><label for="in178" id="op178">a fair amount</label></div>
 
-<div class="radio"><input name="Q45Answer" type="radio" value="" id="in179" onclick="myFunction1()"/><label for="in179" id="op179">a little bit</label></div>
+<div class="radio"><input name="Q45Answer" type="radio" value="a little bit" id="in179" onclick="myFunction1()"/><label for="in179" id="op179">a little bit</label></div>
 
-<div class="radio"><input name="Q45Answer" type="radio" value="" id="in180" onclick="myFunction1()"/><label for="in180" id="op180">not at all</label></div>
+<div class="radio"><input name="Q45Answer" type="radio" value="not at all" id="in180" onclick="myFunction1()"/><label for="in180" id="op180">not at all</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(64)">Continue</button>
 </fieldset>
 
 <fieldset class="hided">
 <p>How much would you say the AI's answer alone (regardless of the confidence or visual explanation) contributed to your final decision for a classification when the classification was difficult to you?</p>
-<div class="radio"><input name="Q46Answer" type="radio" value="" id="in181" onclick="myFunction1()"/><label for="in181" id="op181">a great deal</label></div>
+<div class="radio"><input name="Q46Answer" type="radio" value="a great deal" id="in181" onclick="myFunction1()"/><label for="in181" id="op181">a great deal</label></div>
 
-<div class="radio"><input name="Q46Answer" type="radio" value="" id="in182" onclick="myFunction1()"/><label for="in182" id="op182">a fair amount</label></div>
+<div class="radio"><input name="Q46Answer" type="radio" value="a fair amount" id="in182" onclick="myFunction1()"/><label for="in182" id="op182">a fair amount</label></div>
 
-<div class="radio"><input name="Q46Answer" type="radio" value="" id="in183" onclick="myFunction1()"/><label for="in183" id="op183">a little bit</label></div>
+<div class="radio"><input name="Q46Answer" type="radio" value="a little bit" id="in183" onclick="myFunction1()"/><label for="in183" id="op183">a little bit</label></div>
 
-<div class="radio"><input name="Q46Answer" type="radio" value="" id="in184" onclick="myFunction1()"/><label for="in184" id="op184">not at all</label></div>
+<div class="radio"><input name="Q46Answer" type="radio" value="not at all" id="in184" onclick="myFunction1()"/><label for="in184" id="op184">not at all</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(65)">Continue</button>
 </fieldset>
 
 <fieldset class="hided">
 <p>How much would you say the AI's answer alone (regardless of the confidence or visual explanation) contributed to your final decision for a classification when the classification was difficult to you?</p>
-<div class="radio"><input name="Q47Answer" type="radio" value="" id="in185" onclick="myFunction1()"/><label for="in185" id="op185">a great deal</label></div>
+<div class="radio"><input name="Q47Answer" type="radio" value="a great deal" id="in185" onclick="myFunction1()"/><label for="in185" id="op185">a great deal</label></div>
 
-<div class="radio"><input name="Q47Answer" type="radio" value="" id="in186" onclick="myFunction1()"/><label for="in186" id="op186">a fair amount</label></div>
+<div class="radio"><input name="Q47Answer" type="radio" value="a fair amount" id="in186" onclick="myFunction1()"/><label for="in186" id="op186">a fair amount</label></div>
 
-<div class="radio"><input name="Q47Answer" type="radio" value="" id="in187" onclick="myFunction1()"/><label for="in187" id="op187">a little bit</label></div>
+<div class="radio"><input name="Q47Answer" type="radio" value="a little bit" id="in187" onclick="myFunction1()"/><label for="in187" id="op187">a little bit</label></div>
 
-<div class="radio"><input name="Q47Answer" type="radio" value="" id="in188" onclick="myFunction1()"/><label for="in188" id="op188">not at all</label></div>
+<div class="radio"><input name="Q47Answer" type="radio" value="not at all" id="in188" onclick="myFunction1()"/><label for="in188" id="op188">not at all</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(66)">Continue</button>
 </fieldset>
 
 <fieldset class="hided">
 <p>Overall, do you think you gave more accurate answers with the AI than you would have without it?</p>
-<div class="radio"><input name="Q48Answer" type="radio" value="" id="in189" onclick="myFunction1()"/><label for="in189" id="op189">Yes</label></div>
+<div class="radio"><input name="Q48Answer" type="radio" value="Yes" id="in189" onclick="myFunction1()"/><label for="in189" id="op189">Yes</label></div>
 
-<div class="radio"><input name="Q48Answer" type="radio" value="" id="in190" onclick="myFunction1()"/><label for="in190" id="op190">Not sure</label></div>
+<div class="radio"><input name="Q48Answer" type="radio" value="Not sure" id="in190" onclick="myFunction1()"/><label for="in190" id="op190">Not sure</label></div>
 
-<div class="radio"><input name="Q48Answer" type="radio" value="" id="in191" onclick="myFunction1()"/><label for="in191" id="op191">No</label></div>
+<div class="radio"><input name="Q48Answer" type="radio" value="No" id="in191" onclick="myFunction1()"/><label for="in191" id="op191">No</label></div>
 
 <button type="button" class="hidedd" onclick="myFunction2(67)">Continue</button>
 </fieldset>
 
+<!-- Final page worker sees asking them to submit the hit. -->
 <fieldset class="hided">
 <p>Please submit the hit.</p>
+<p><input type='submit' id='submitButton' value='Submit' /></p>
 </fieldset>
 
-<p><input type='submit' id='submitButton' value='Submit' /></p></form>
+</form>
 <script language='Javascript'>turkSetAssignmentID();</script>
 </body></html>
 <!-- YOUR HTML ENDS -->
